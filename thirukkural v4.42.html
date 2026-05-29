@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>திருக்குறள் · Thirukkural — Complete 1330 Kurals · Version 4-Arabic</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#05101e;--bg2:#081728;--panel:#0f2640;--panel2:#132d4a;
+  --border:#1e3d5c;--border2:#2a5278;
+  --gold:#c8a84b;--gold-lt:#e2c878;--gold-dk:#7a6030;
+  --accent:#4a9eff;--accent2:#2d7dd2;
+  --teal:#2ab5b5;--teal-dk:#1a8080;
+  --red:#e05555;--red-dk:#8b2020;
+  --white:#e8f0f8;--white2:#b8cce0;--white3:#7a96b2;
+  --arabic:#f0e6cc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:-2;
+  background:radial-gradient(ellipse 100% 50% at 50% -10%,#0a2040 0%,transparent 60%),
+  radial-gradient(ellipse 50% 40% at 0% 100%,#07152a 0%,transparent 50%),var(--bg)}
+body::after{content:'';position:fixed;inset:0;z-index:-1;opacity:.2;
+  background-image:radial-gradient(circle at 1px 1px,rgba(74,158,255,.1) 1px,transparent 0);
+  background-size:30px 30px}
+
+/* ── HEADER ── */
+header{text-align:center;padding:2.5rem 1rem 2rem;
+  background:linear-gradient(180deg,rgba(10,32,64,.9) 0%,transparent 100%);
+  border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--accent),var(--teal),var(--gold),transparent)}
+.hd-badge{display:inline-block;background:rgba(200,168,75,.12);border:1px solid rgba(200,168,75,.3);
+  border-radius:20px;padding:.28rem .9rem;font-size:.72rem;letter-spacing:.15em;color:var(--gold);
+  margin-bottom:.9rem;font-family:'Playfair Display',serif}
+header h1{font-family:'Noto Serif Tamil',serif;font-size:clamp(2rem,6vw,3.8rem);
+  color:var(--white);font-weight:700;line-height:1.1;text-shadow:0 0 40px rgba(74,158,255,.2)}
+header h2{font-family:'Playfair Display',serif;font-size:clamp(.85rem,2.5vw,1.3rem);
+  color:var(--gold-lt);letter-spacing:.25em;margin-top:.45rem;font-weight:400}
+.hd-meta{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.2rem}
+.hd-stat .num{font-size:1.5rem;font-weight:700;color:var(--gold-lt);font-family:'Playfair Display',serif}
+.hd-stat .lbl{font-size:.66rem;color:var(--white3);letter-spacing:.1em;text-transform:uppercase;margin-top:.1rem}
+.hd-div{width:1px;background:var(--border);align-self:stretch}
+.dedication{font-size:.82rem;color:var(--white3);margin-top:.9rem;font-style:italic}
+.dedication strong{color:var(--gold-lt)}
+
+/* ── CONTROLS ── */
+.ctrl-wrap{position:sticky;top:0;z-index:100;background:rgba(5,16,30,.96);
+  border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.ctrl-bar{max-width:1280px;margin:0 auto;padding:.65rem 1.5rem;
+  display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.sw{flex:1;min-width:200px;position:relative}
+.sw input{width:100%;padding:.55rem 1rem .55rem 2.3rem;border:1px solid var(--border);
+  border-radius:6px;background:rgba(255,255,255,.04);color:var(--white);
+  font-family:'Inter',sans-serif;font-size:.87rem;outline:none;transition:border-color .2s}
+.sw input::placeholder{color:var(--white3)}
+.sw input:focus{border-color:var(--accent)}
+.sw .si{position:absolute;left:.72rem;top:50%;transform:translateY(-50%);color:var(--white3);font-size:.88rem;pointer-events:none}
+select{padding:.53rem 1.8rem .53rem .72rem;border:1px solid var(--border);border-radius:6px;
+  background:rgba(255,255,255,.04) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234a9eff'/%3E%3C/svg%3E") no-repeat right .55rem center;
+  color:var(--white);font-family:'Inter',sans-serif;font-size:.82rem;
+  appearance:none;cursor:pointer;outline:none;min-width:100px}
+select:focus{border-color:var(--accent)}
+select option{background:#0c1f36;color:var(--white)}
+.ibtn{padding:.53rem .85rem;border:1px solid var(--border);border-radius:6px;
+  background:rgba(255,255,255,.04);color:var(--white2);font-size:.82rem;cursor:pointer;
+  transition:all .18s;white-space:nowrap;font-family:'Inter',sans-serif}
+.ibtn:hover{background:rgba(74,158,255,.12);border-color:var(--accent2);color:var(--accent)}
+.ibtn.act{background:rgba(74,158,255,.18);border-color:var(--accent);color:var(--accent)}
+.pal-tabs{max-width:1280px;margin:0 auto;padding:.45rem 1.5rem;
+  display:flex;gap:.3rem;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+.ptab{padding:.35rem .85rem;border:1px solid transparent;border-radius:20px;
+  font-size:.78rem;cursor:pointer;transition:all .18s;color:var(--white3);font-family:'Inter',sans-serif}
+.ptab:hover{color:var(--white2);background:rgba(255,255,255,.05)}
+.ptab.on{color:var(--white);background:rgba(74,158,255,.15);border-color:var(--accent2)}
+.ptab.v.on{background:rgba(224,85,85,.15);border-color:var(--red-dk);color:#ff9999}
+.ptab.w.on{background:rgba(42,181,181,.15);border-color:var(--teal-dk);color:var(--teal)}
+.ptab.l.on{background:rgba(200,168,75,.15);border-color:var(--gold-dk);color:var(--gold-lt)}
+
+/* ── STATS ── */
+.stats{max-width:1280px;margin:0 auto;padding:.45rem 1.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.77rem;color:var(--white3);flex-wrap:wrap;gap:.35rem}
+.stats strong{color:var(--white2)}
+
+/* ── GRID ── */
+.kgrid{max-width:1280px;margin:0 auto;padding:1rem 1.5rem 3rem;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1rem}
+
+/* ── CARD ── */
+.kcard{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+  overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;
+  display:flex;flex-direction:column}
+.kcard:hover{transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 0 1px var(--border2);border-color:var(--border2)}
+.kcard.v{border-top:2px solid var(--red-dk)}
+.kcard.w{border-top:2px solid var(--teal-dk)}
+.kcard.l{border-top:2px solid var(--gold-dk)}
+.ct{padding:.9rem 1rem .7rem}
+.cm{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.7rem;gap:.4rem}
+.kn{background:rgba(74,158,255,.12);border:1px solid rgba(74,158,255,.22);border-radius:4px;
+  padding:.15rem .52rem;font-size:.67rem;font-weight:600;color:var(--accent);
+  letter-spacing:.06em;font-family:'Playfair Display',serif;white-space:nowrap}
+.cb{font-size:.66rem;color:var(--white3);background:rgba(255,255,255,.04);
+  border:1px solid var(--border);border-radius:4px;padding:.15rem .42rem;
+  text-align:right;line-height:1.4;max-width:56%}
+.cb b{color:var(--white2);display:block;font-weight:500;font-size:.67rem}
+.tl{font-family:'Noto Serif Tamil',serif;font-size:1.05rem;line-height:1.88;
+  color:var(--white);font-weight:600;padding:.5rem .7rem;margin-bottom:.55rem;
+  background:rgba(255,255,255,.03);border-radius:5px;border-left:3px solid var(--gold)}
+.ti{font-size:.71rem;color:var(--white3);font-style:italic;margin-bottom:.5rem;padding-left:.2rem;line-height:1.5}
+.ec{font-size:.87rem;line-height:1.6;color:var(--white2);font-style:italic;
+  font-family:'Playfair Display',serif;padding-left:.2rem;margin-bottom:.55rem}
+
+/* ── ARABIC SECTION (built-in) ── */
+.ars{background:linear-gradient(135deg,rgba(200,168,75,.08) 0%,rgba(42,181,181,.04) 100%);
+  border-top:1px solid rgba(200,168,75,.17);padding:.75rem 1rem}
+.arl{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:.42rem;display:flex;align-items:center;gap:.38rem;font-weight:600}
+.arl::after{content:'';flex:1;height:1px;background:rgba(200,168,75,.17)}
+.ara{font-family:'Noto Naskh Arabic',serif;font-size:1.08rem;direction:rtl;text-align:right;
+  color:var(--arabic);line-height:2;margin-bottom:.38rem}
+.art{font-size:.72rem;color:var(--gold-lt);font-style:italic;margin-bottom:.35rem;line-height:1.5}
+.arm{font-size:.79rem;color:var(--white2);line-height:1.6}
+
+/* ── EXPLANATION (expandable) ── */
+.cex{padding:0 1rem;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
+.kcard.ex .cex{max-height:260px;padding:.7rem 1rem}
+.mv{font-size:.81rem;line-height:1.7;color:var(--white2);font-family:'Noto Serif Tamil',serif;margin-bottom:.38rem}
+.en2{font-size:.79rem;line-height:1.6;color:var(--white3);font-style:italic}
+
+/* ── CARD FOOTER ── */
+.cf{padding:.58rem 1rem;border-top:1px solid var(--border);
+  display:flex;gap:.32rem;flex-wrap:wrap;background:rgba(255,255,255,.016);margin-top:auto}
+.cta{padding:.26rem .58rem;border:1px solid var(--border);border-radius:4px;
+  font-size:.71rem;color:var(--white3);background:transparent;cursor:pointer;
+  transition:all .17s;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:.2rem}
+.cta:hover{background:rgba(74,158,255,.1);color:var(--accent);border-color:var(--accent2)}
+.cta.on{background:rgba(74,158,255,.14);color:var(--accent);border-color:var(--accent)}
+
+/* ── MODAL ── */
+.mov{display:none;position:fixed;inset:0;background:rgba(2,8,18,.92);z-index:1000;
+  align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(8px)}
+.mov.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border2);border-radius:12px;
+  max-width:780px;width:100%;max-height:92vh;overflow-y:auto;padding:1.8rem;position:relative;
+  box-shadow:0 24px 80px rgba(0,0,0,.8),0 0 0 1px rgba(74,158,255,.08)}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  border-radius:12px 12px 0 0;
+  background:linear-gradient(90deg,var(--red-dk),var(--gold),var(--teal),var(--accent),var(--gold))}
+.mcl{position:absolute;top:.9rem;right:.9rem;width:28px;height:28px;
+  display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);
+  border:1px solid var(--border);border-radius:5px;cursor:pointer;color:var(--white3);
+  font-size:.85rem;transition:all .17s}
+.mcl:hover{background:rgba(224,85,85,.2);color:var(--red);border-color:var(--red-dk)}
+.mnum{font-size:.7rem;letter-spacing:.15em;color:var(--accent);margin-bottom:.28rem;font-weight:600}
+.mch{font-size:.82rem;color:var(--white3);margin-bottom:1rem;padding-bottom:.75rem;
+  border-bottom:1px solid var(--border);line-height:1.5}
+.mch em{color:var(--white2);font-style:normal}
+.mtamil{font-family:'Noto Serif Tamil',serif;font-size:1.38rem;line-height:1.95;
+  color:var(--white);font-weight:700;border-left:4px solid var(--gold);padding:0 0 0 1rem;margin-bottom:.42rem}
+.mti{font-size:.77rem;color:var(--white3);font-style:italic;margin-bottom:1rem;padding-left:1rem}
+.msec{margin-bottom:.95rem}
+.msl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);
+  display:block;margin-bottom:.28rem;font-weight:600}
+.mengl{font-style:italic;font-size:1rem;line-height:1.7;color:var(--white2);font-family:'Playfair Display',serif}
+.mmv{font-size:.87rem;line-height:1.75;color:var(--white2);font-family:'Noto Serif Tamil',serif;
+  background:rgba(255,255,255,.03);padding:.65rem;border-radius:5px;border-left:3px solid var(--teal-dk)}
+.mex2{font-size:.86rem;line-height:1.7;color:var(--white3);font-style:italic}
+
+/* ── MODAL ARABIC ── */
+.mar{background:linear-gradient(135deg,rgba(200,168,75,.1),rgba(74,158,255,.05));
+  border:1px solid rgba(200,168,75,.22);border-radius:8px;padding:.9rem 1.05rem;margin-bottom:1rem}
+.marh{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:.6rem;font-weight:600;display:flex;align-items:center;gap:.38rem}
+.marh span{flex:1;height:1px;background:rgba(200,168,75,.18);display:block}
+.mara{font-family:'Noto Naskh Arabic',serif;font-size:1.26rem;direction:rtl;text-align:right;
+  color:var(--arabic);line-height:2.1;margin-bottom:.52rem}
+.mart{font-size:.79rem;color:var(--gold-lt);font-style:italic;margin-bottom:.42rem;line-height:1.6}
+.marm{font-family:'Noto Naskh Arabic',serif;font-size:.96rem;direction:rtl;text-align:right;
+  color:var(--arabic);line-height:1.9}
+
+/* ── MODAL NAV ── */
+.mnav{display:flex;justify-content:space-between;align-items:center;margin-top:1.3rem;
+  padding-top:.85rem;border-top:1px solid var(--border)}
+.mnav button{padding:.36rem .85rem;border:1px solid var(--border);border-radius:5px;
+  background:rgba(255,255,255,.04);color:var(--white3);font-size:.79rem;cursor:pointer;transition:all .17s}
+.mnav button:hover:not(:disabled){background:rgba(74,158,255,.12);color:var(--accent);border-color:var(--accent2)}
+.mnav button:disabled{opacity:.22;cursor:default}
+.mnav .mpos{font-size:.77rem;color:var(--white3)}
+
+/* ── PAGER ── */
+.pager{display:flex;justify-content:center;align-items:center;gap:.28rem;flex-wrap:wrap;
+  max-width:1280px;margin:.5rem auto;padding:0 1.5rem}
+.pb{padding:.34rem .65rem;border:1px solid var(--border);border-radius:4px;background:transparent;
+  color:var(--white3);font-size:.79rem;cursor:pointer;transition:all .17s;min-width:32px;text-align:center}
+.pb:hover:not([disabled]){background:rgba(74,158,255,.1);color:var(--accent);border-color:var(--accent2)}
+.pb.cur{background:rgba(74,158,255,.2);color:var(--accent);border-color:var(--accent);font-weight:600}
+.pb[disabled]{opacity:.2;cursor:default}
+.pdots{color:var(--white3);padding:0 .18rem;font-size:.78rem}
+
+/* ── PRINT STYLES ── */
+@media print{
+  body{background:#fff;color:#000}
+  body::before,body::after{display:none}
+  .ctrl-wrap,.pal-tabs,.stats,.pager,.cf,.ibtn,
+  .mov,.noprint{display:none!important}
+  .kgrid{display:block;padding:0}
+  .kcard{background:#fff;border:1px solid #ccc;border-radius:0;
+    break-inside:avoid;margin-bottom:1.2rem;page-break-inside:avoid;
+    box-shadow:none;border-top:2px solid #444!important}
+  .ct{padding:.6rem .8rem .5rem}
+  .kn{background:#eee;border-color:#ccc;color:#333}
+  .cb{background:#f5f5f5;border-color:#ccc;color:#444}
+  .cb b{color:#222}
+  .tl{background:#f9f9f9;border-left:3px solid #888;color:#000}
+  .ti{color:#555}
+  .ec{color:#333}
+  .ars{background:#fffef5;border-top:1px solid #ddd}
+  .arl{color:#7a5f00}
+  .ara{color:#2a1800;font-size:1.1rem}
+  .art{color:#5a4010}
+  .arm{color:#333}
+  .cex{max-height:none!important;padding:.6rem .8rem!important}
+  .mv{color:#333}
+  .en2{color:#555}
+  header{background:none;border-bottom:2px solid #000;padding:1rem}
+  header h1{color:#000;text-shadow:none;font-size:2rem}
+  header h2{color:#444}
+  .hd-badge,.hd-meta,.dedication{color:#444}
+  .hd-stat .num{color:#000}
+  .hd-stat .lbl{color:#666}
+}
+/* Print per page (single kural) */
+.print-page{page-break-after:always}
+
+footer{text-align:center;padding:1.8rem 1rem;color:var(--white3);font-size:.76rem;
+  border-top:1px solid var(--border);line-height:1.9}
+footer strong{color:var(--gold-lt)}
+footer a{color:var(--accent);text-decoration:none}
+
+@media(max-width:700px){
+  .ctrl-bar{flex-direction:column}.sw{min-width:100%}
+  .kgrid{grid-template-columns:1fr;padding:.8rem}
+  .modal{padding:1.1rem}.hd-meta{gap:1rem}
+}
+
+/* ── VERSION & CONTRIBUTOR ── */
+.ver-row{display:flex;justify-content:center;align-items:center;gap:1.5rem;
+  flex-wrap:wrap;margin-top:1rem;padding-top:.8rem;border-top:1px solid rgba(200,168,75,.15)}
+.ver-badge{display:flex;align-items:center;gap:.5rem}
+.ver-tag{background:linear-gradient(135deg,rgba(74,158,255,.25),rgba(42,181,181,.2));
+  border:1px solid var(--accent2);border-radius:4px;padding:.2rem .65rem;
+  font-size:.72rem;font-weight:700;color:var(--accent);letter-spacing:.1em;font-family:'Playfair Display',serif}
+.ver-date{font-size:.72rem;color:var(--white3)}
+.contributor{font-size:.82rem;color:var(--white2);display:flex;flex-direction:column;align-items:center;gap:.12rem}
+.contributor strong{color:var(--gold-lt);font-size:.92rem;letter-spacing:.03em}
+.contrib-role{font-size:.7rem;color:var(--white3);font-style:italic}
+.verbox{max-width:860px;margin:1.1rem auto 0;background:rgba(255,255,255,.03);
+  border:1px solid var(--border);border-radius:8px;overflow:hidden;text-align:left}
+.verbox-title{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--white3);padding:.5rem 1rem;background:rgba(255,255,255,.04);
+  border-bottom:1px solid var(--border);font-weight:600}
+.vertable{width:100%;border-collapse:collapse;font-size:.77rem}
+.vertable th{padding:.42rem .9rem;text-align:left;font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--white3);background:rgba(255,255,255,.03);
+  border-bottom:1px solid var(--border);font-weight:600}
+.vertable td{padding:.5rem .9rem;border-bottom:1px solid rgba(30,61,92,.5);
+  color:var(--white3);vertical-align:top;line-height:1.5}
+.vertable td:first-child{white-space:nowrap}
+.vertable td:nth-child(2){white-space:nowrap;color:var(--white2)}
+.vertable td:nth-child(3){color:var(--white2)}
+.ver-current td{background:rgba(74,158,255,.06)}
+.ver-current td:nth-child(3){color:var(--white)}
+@media print{
+  .ver-row{color:#333}
+  .ver-tag{background:#e8f0ff;border-color:#2d7dd2;color:#2d7dd2}
+  .contributor strong{color:#7a5f00}
+  .verbox{border-color:#ccc;background:#fafafa}
+  .verbox-title{background:#f0f0f0;color:#555}
+  .vertable th{background:#f5f5f5;color:#555}
+  .vertable td{color:#444;border-color:#ddd}
+  .ver-current td{background:#f0f5ff}
+}
+
+/* ── COLLAPSIBLE VERSION HISTORY (bottom) ── */
+.vh-wrap{max-width:1280px;margin:0 auto 2rem;padding:0 1.5rem}
+.vh-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;
+  padding:.65rem 1rem;background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:6px;cursor:pointer;color:var(--white3);font-size:.8rem;
+  font-family:'Inter',sans-serif;transition:all .2s}
+.vh-toggle:hover{background:rgba(74,158,255,.08);color:var(--white2);border-color:var(--accent2)}
+.vh-toggle .vht-left{display:flex;align-items:center;gap:.6rem}
+.vh-toggle .vht-arrow{transition:transform .25s;font-size:.75rem}
+.vh-toggle.open .vht-arrow{transform:rotate(180deg)}
+.vh-body{display:none;border:1px solid var(--border);border-top:none;
+  border-radius:0 0 6px 6px;overflow:hidden}
+.vh-body.open{display:block}
+.vertable2{width:100%;border-collapse:collapse;font-size:.78rem}
+.vertable2 th{padding:.42rem 1rem;text-align:left;font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--white3);background:rgba(255,255,255,.03);
+  border-bottom:1px solid var(--border);font-weight:600}
+.vertable2 td{padding:.55rem 1rem;border-bottom:1px solid rgba(30,61,92,.4);
+  color:var(--white3);vertical-align:top;line-height:1.55}
+.vertable2 td:first-child{white-space:nowrap;font-weight:600}
+.vertable2 td:nth-child(2){white-space:nowrap;color:var(--white2)}
+.vertable2 td:nth-child(3){color:var(--white2)}
+.vertable2 tr.vc td{background:rgba(74,158,255,.06)}
+.vertable2 tr.vc td:nth-child(3){color:var(--white)}
+@media print{.vh-wrap{display:none}}
+
+
+
+/* ── INTERACTIVE ENHANCEMENTS ── */
+
+/* Reading progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg,var(--gold),var(--accent),var(--teal));
+  z-index:9999;transition:width .1s linear;pointer-events:none}
+
+/* Card hover glow by pal */
+.kcard.v:hover{box-shadow:0 8px 28px rgba(224,85,85,.2),0 0 0 1px rgba(139,32,32,.4)}
+.kcard.w:hover{box-shadow:0 8px 28px rgba(42,181,181,.2),0 0 0 1px rgba(26,128,128,.4)}
+.kcard.l:hover{box-shadow:0 8px 28px rgba(200,168,75,.2),0 0 0 1px rgba(122,96,48,.4)}
+
+/* Tamil lines highlight on hover */
+.kcard:hover .tl{border-left-color:var(--gold-lt);background:rgba(255,255,255,.05)}
+
+/* Chapter pill clickable */
+.cb{cursor:pointer;transition:all .17s}
+.cb:hover{background:rgba(74,158,255,.12);border-color:var(--accent2);color:var(--accent)}
+.cb:hover b{color:var(--accent)}
+
+/* Kural number badge clickable */
+.kn{cursor:pointer}
+.kn:hover{background:rgba(74,158,255,.2);border-color:var(--accent)}
+
+/* Arabic section subtle animation */
+.ars{transition:background .3s}
+.kcard:hover .ars{background:linear-gradient(135deg,rgba(200,168,75,.12) 0%,rgba(42,181,181,.07) 100%)}
+
+/* Tooltip on number badge */
+.kn[title]{position:relative}
+
+/* Smooth card expand */
+.cex{transition:max-height .35s cubic-bezier(.4,0,.2,1),padding .35s ease}
+
+/* Better scrollbar */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent2)}
+
+/* Chapter header divider between chapters in grid */
+.ch-divider{grid-column:1/-1;padding:.5rem 0;border-bottom:1px solid var(--border);
+  margin-bottom:.3rem;display:flex;align-items:center;gap:.8rem}
+.ch-divider-num{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--white3);background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:3px;padding:.15rem .5rem;white-space:nowrap}
+.ch-divider-name{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--white2);font-style:italic}
+.ch-divider-line{flex:1;height:1px;background:var(--border)}
+
+/* Pal badge on chapter divider */
+.ch-divider-pal{font-size:.62rem;padding:.12rem .45rem;border-radius:3px;
+  border:1px solid;white-space:nowrap}
+.ch-divider-pal.v{color:#ff9999;border-color:var(--red-dk);background:rgba(224,85,85,.1)}
+.ch-divider-pal.w{color:var(--teal);border-color:var(--teal-dk);background:rgba(42,181,181,.1)}
+.ch-divider-pal.l{color:var(--gold-lt);border-color:var(--gold-dk);background:rgba(200,168,75,.1)}
+
+/* Kural count badge */
+.kural-count{font-size:.68rem;color:var(--white3);white-space:nowrap}
+
+/* Back to top button */
+.btt{position:fixed;bottom:1.5rem;right:1.5rem;width:38px;height:38px;
+  background:rgba(74,158,255,.18);border:1px solid var(--accent2);border-radius:50%;
+  display:none;align-items:center;justify-content:center;cursor:pointer;
+  font-size:.9rem;color:var(--accent);transition:all .2s;z-index:500}
+.btt.visible{display:flex}
+.btt:hover{background:rgba(74,158,255,.3);transform:translateY(-2px)}
+
+/* Highlight current chapter in filter */
+select option:checked{background:rgba(74,158,255,.2)}
+
+/* Smooth modal scroll */
+.modal{scroll-behavior:smooth}
+
+/* Arabic meaning more readable */
+.arm{font-size:.82rem;line-height:1.7;color:var(--white2)}
+
+/* Better transliteration styling */
+.art{font-size:.75rem;color:var(--gold);font-style:italic;opacity:.85;margin-bottom:.4rem}
+
+/* Card number readability */
+.kn{font-size:.72rem;font-weight:700;min-width:72px}
+
+/* Improve chapter badge */
+.cb{font-size:.68rem;line-height:1.45}
+.cb b{font-size:.7rem}
+
+/* Print button subtle */
+.prt-btn{opacity:.7}
+.kcard:hover .prt-btn{opacity:1}
+
+@media print{
+  .btt,.progress-bar{display:none!important}
+  .kcard.v:hover,.kcard.w:hover,.kcard.l:hover{box-shadow:none}
+}
+
+/* ══ FOREWORD ══ */
+.fw-wrap{max-width:900px;margin:.8rem auto 0;padding:0 1.5rem}
+.fw-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;
+  padding:.72rem 1.2rem;
+  background:linear-gradient(135deg,rgba(200,168,75,.1),rgba(74,158,255,.06));
+  border:1px solid rgba(200,168,75,.28);border-radius:8px;
+  cursor:pointer;font-family:'Playfair Display',serif;transition:all .22s}
+.fw-toggle:hover{background:linear-gradient(135deg,rgba(200,168,75,.2),rgba(74,158,255,.12));
+  border-color:var(--gold)}
+.fw-toggle-left{display:flex;align-items:center;gap:.7rem;color:var(--gold-lt);font-size:.88rem;font-style:italic}
+.fw-toggle-right{display:flex;align-items:center;gap:.5rem}
+.fw-arrow{color:var(--gold-lt);font-size:.75rem;transition:transform .25s;font-style:normal}
+.fw-toggle.open .fw-arrow{transform:rotate(180deg)}
+.fw-body{display:none;border:1px solid rgba(200,168,75,.2);border-top:none;
+  border-radius:0 0 8px 8px;background:rgba(8,23,40,.6);overflow:hidden}
+.fw-body.open{display:block}
+.fw-langs{display:flex;border-bottom:1px solid rgba(200,168,75,.15);background:rgba(0,0,0,.2)}
+.fw-lang-btn{flex:1;padding:.52rem .5rem;border:none;background:transparent;
+  color:var(--white3);font-family:'Playfair Display',serif;font-size:.8rem;
+  cursor:pointer;transition:all .18s;border-bottom:2px solid transparent}
+.fw-lang-btn:hover{color:var(--white2);background:rgba(255,255,255,.04)}
+.fw-lang-btn.active{color:var(--gold-lt);border-bottom-color:var(--gold);background:rgba(200,168,75,.06)}
+.fw-pane{display:none;padding:1.6rem 1.8rem 1.4rem}
+.fw-pane.active{display:block}
+.fw-pane.rtl-pane{direction:rtl;text-align:right}
+.fw-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-lt);
+  margin-bottom:1.1rem;font-weight:600;letter-spacing:.03em;line-height:1.4}
+.fw-title.ta{font-family:'Noto Serif Tamil',serif;font-size:1rem}
+.fw-title.ar{font-family:'Noto Naskh Arabic',serif;font-size:1.15rem}
+.fw-p{font-size:.9rem;line-height:1.9;color:var(--white2);margin-bottom:.85rem;
+  font-family:'Playfair Display',serif}
+.fw-p.ta{font-family:'Noto Serif Tamil',serif;font-size:.92rem;line-height:2.1}
+.fw-p.ar{font-family:'Noto Naskh Arabic',serif;font-size:1rem;line-height:2.1;color:var(--arabic)}
+.fw-kural{border-left:3px solid var(--gold);padding:.6rem 1rem;margin:.85rem 0;
+  background:rgba(200,168,75,.06);border-radius:0 5px 5px 0;line-height:1.85}
+.fw-kural.rtl-k{border-left:none;border-right:3px solid var(--gold)}
+.fw-kta{font-family:'Noto Serif Tamil',serif;font-size:.95rem;color:var(--white);font-weight:600}
+.fw-ken{font-size:.83rem;color:var(--white3);font-style:italic;margin-top:.22rem}
+.fw-kar{font-family:'Noto Naskh Arabic',serif;font-size:1rem;color:var(--arabic);line-height:2}
+.fw-leader{margin:.45rem 0;padding:.42rem 0;border-bottom:1px solid rgba(200,168,75,.1)}
+.fw-lname{font-size:.9rem;color:var(--gold-lt);font-weight:600;font-family:'Playfair Display',serif}
+.fw-lname.ta{font-family:'Noto Serif Tamil',serif}
+.fw-lname.ar{font-family:'Noto Naskh Arabic',serif;font-size:1rem;color:var(--arabic)}
+.fw-ldesc{font-size:.82rem;color:var(--white3);font-style:italic;margin-top:.16rem}
+.fw-ldesc.ta{font-family:'Noto Serif Tamil',serif}
+.fw-ldesc.ar{font-family:'Noto Naskh Arabic',serif;font-size:.9rem}
+.fw-sig{margin-top:1.2rem;padding-top:.9rem;border-top:1px solid rgba(200,168,75,.15);
+  color:var(--gold-lt);font-size:.85rem;line-height:1.9;text-align:right;font-style:italic}
+.fw-sig.ta{font-family:'Noto Serif Tamil',serif;font-size:.88rem;font-style:normal}
+.fw-sig.ar{font-family:'Noto Naskh Arabic',serif;font-size:.95rem;color:var(--arabic);text-align:left;font-style:normal}
+@media print{.fw-wrap{max-width:100%;padding:0}}
+
+/* ══ DEDICATION ══ */
+.ded-wrap{max-width:900px;margin:.6rem auto 0;padding:0 1.5rem}
+.ded-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;
+  padding:.72rem 1.2rem;
+  background:linear-gradient(135deg,rgba(10,30,60,.8),rgba(200,168,75,.1));
+  border:1px solid rgba(200,168,75,.35);border-radius:8px;
+  cursor:pointer;font-family:'Playfair Display',serif;transition:all .22s}
+.ded-toggle:hover{background:linear-gradient(135deg,rgba(15,40,80,.9),rgba(200,168,75,.18));
+  border-color:var(--gold)}
+.ded-toggle-left{display:flex;align-items:center;gap:.7rem;color:var(--gold-lt);font-size:.88rem;font-style:italic}
+.ded-toggle-right{display:flex;align-items:center;gap:.5rem}
+.ded-arrow{color:var(--gold-lt);font-size:.75rem;transition:transform .25s;font-style:normal}
+.ded-toggle.open .ded-arrow{transform:rotate(180deg)}
+.ded-body{display:none;border:1px solid rgba(200,168,75,.25);border-top:none;
+  border-radius:0 0 8px 8px;background:linear-gradient(170deg,rgba(8,20,45,.9),rgba(5,15,35,.95));
+  overflow:hidden}
+.ded-body.open{display:block}
+.ded-langs{display:flex;border-bottom:1px solid rgba(200,168,75,.18);background:rgba(0,0,0,.3)}
+.ded-lang-btn{flex:1;padding:.52rem .5rem;border:none;background:transparent;
+  color:var(--white3);font-family:'Playfair Display',serif;font-size:.8rem;
+  cursor:pointer;transition:all .18s;border-bottom:2px solid transparent}
+.ded-lang-btn:hover{color:var(--white2);background:rgba(200,168,75,.06)}
+.ded-lang-btn.active{color:var(--gold-lt);border-bottom-color:var(--gold);background:rgba(200,168,75,.08)}
+.ded-pane{display:none;padding:2rem 2.2rem 1.8rem;text-align:center}
+.ded-pane.active{display:block}
+.ded-pane.rtl-pane{direction:rtl;text-align:right}
+.ded-emblem{font-size:2rem;color:var(--gold);margin-bottom:1rem;opacity:.8;
+  text-shadow:0 0 20px rgba(200,168,75,.4)}
+.ded-text{font-family:'EB Garamond','Playfair Display',serif;font-size:.95rem;line-height:2.1;
+  color:var(--white2);margin-bottom:1.3rem;text-align:center}
+.ded-text.ta{font-family:'Noto Serif Tamil',serif;font-size:.92rem;line-height:2.3}
+.ded-text.ar{font-family:'Noto Naskh Arabic',serif;font-size:1.02rem;line-height:2.3;
+  color:var(--arabic);text-align:right}
+.ded-text em{color:var(--gold-lt);font-style:italic}
+.ded-sig{margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(200,168,75,.18);
+  font-style:italic;color:var(--gold);font-size:.85rem;line-height:1.9;text-align:right;
+  font-family:'EB Garamond','Playfair Display',serif}
+.ded-sig.ta{font-family:'Noto Serif Tamil',serif;font-size:.87rem;font-style:normal;color:var(--gold-lt)}
+.ded-sig.ar{font-family:'Noto Naskh Arabic',serif;font-size:.92rem;color:var(--arabic);text-align:left;font-style:normal}
+@media print{.ded-wrap{max-width:100%;padding:0}}
+
+}
+
+/* ══ PHOTO GALLERY ══ */
+.gallery-wrap{max-width:1280px;margin:1.2rem auto 0;padding:0 1.5rem}
+.gallery-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;
+  padding:.7rem 1.2rem;
+  background:linear-gradient(135deg,rgba(42,181,181,.1),rgba(74,158,255,.07));
+  border:1px solid rgba(42,181,181,.3);border-radius:8px;
+  cursor:pointer;font-family:'Playfair Display',serif;transition:all .22s}
+.gallery-toggle:hover{background:linear-gradient(135deg,rgba(42,181,181,.18),rgba(74,158,255,.12));border-color:var(--teal)}
+.gallery-toggle-left{display:flex;align-items:center;gap:.7rem;color:var(--teal);font-size:.88rem}
+.gallery-arrow{color:var(--teal);font-size:.75rem;transition:transform .25s}
+.gallery-toggle.open .gallery-arrow{transform:rotate(180deg)}
+.gallery-body{display:none;border:1px solid rgba(42,181,181,.2);border-top:none;
+  border-radius:0 0 8px 8px;background:rgba(5,20,40,.7);padding:1.5rem 1.8rem}
+.gallery-body.open{display:block}
+.gallery-intro{font-size:.85rem;color:var(--white3);margin-bottom:1.2rem;
+  font-style:italic;line-height:1.7;text-align:center}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem}
+.gallery-card{border-radius:8px;overflow:hidden;border:1px solid var(--border);
+  background:var(--panel);transition:transform .22s,box-shadow .22s}
+.gallery-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.5)}
+.gallery-card img{width:100%;height:220px;object-fit:cover;display:block;background:var(--panel2)}
+.gallery-card-body{padding:.75rem .9rem}
+.gallery-card-title{font-size:.85rem;color:var(--white);font-weight:600;
+  font-family:'Playfair Display',serif;margin-bottom:.3rem}
+.gallery-card-sub{font-size:.75rem;color:var(--white3);line-height:1.5}
+@media print{.gallery-wrap{display:none}}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr}}
+</style>
+<body>
+
+<div class="progress-bar" id="progBar"></div>
+<header>
+  <div class="hd-badge">திருவள்ளுவர் · Thiruvalluvar · ثيروفالّوفار</div>
+  <h1>திருக்குறள்</h1>
+  <h2>T H I R U K K U R A L</h2>
+  <div class="hd-meta">
+    <div class="hd-stat"><div class="num">1330</div><div class="lbl">Kurals</div></div>
+    <div class="hd-div"></div>
+    <div class="hd-stat"><div class="num">133</div><div class="lbl">Chapters</div></div>
+    <div class="hd-div"></div>
+    <div class="hd-stat"><div class="num">3</div><div class="lbl">Books</div></div>
+    <div class="hd-div"></div>
+    <div class="hd-stat"><div class="num">3</div><div class="lbl">Languages</div></div>
+  </div>
+  <div class="dedication">
+    Dedicated with reverence to <strong>H.H. Sheikh Zayed bin Sultan Al Nahyan</strong> — Father of the UAE 🇦🇪<br/>
+    <em>Two wells of ancient wisdom, separated by oceans, united by the same light of humanity</em>
+  </div>
+
+
+</header>
+
+
+<!-- FOREWORD trilingual -->
+<div class="fw-wrap noprint">
+  <button class="fw-toggle" id="fwToggle">
+    <span class="fw-toggle-left">&#128220;&nbsp; முன்னுரை &middot; Foreword &middot; المقدمة &nbsp;&mdash; <span style="font-size:.77rem;opacity:.75;font-style:normal">Dr. Jayaprakash Ponraj</span></span>
+    <span class="fw-toggle-right"><span style="font-size:.72rem;color:var(--white3);font-style:normal">click to read</span>&nbsp;<span class="fw-arrow">&#9660;</span></span>
+  </button>
+  <div class="fw-body" id="fwBody">
+    <div class="fw-langs">
+      <button class="fw-lang-btn active" data-pane="fw-en">&#127468;&#127463; English</button>
+      <button class="fw-lang-btn" data-pane="fw-ta">&#127470;&#127475; தமிழ்</button>
+      <button class="fw-lang-btn" data-pane="fw-ar">&#128332; العربية</button>
+    </div>
+
+    <!-- ENGLISH -->
+    <div class="fw-pane active" id="fw-en">
+      <div class="fw-title">Foreword</div>
+      <p class="fw-p">The United Arab Emirates rises today as a land where dreams ascend like dawn over golden sands, where unity shapes destiny, and where the wisdom of leaders illuminates every horizon.</p>
+      <p class="fw-p">At the heart of this nation stands <strong style="color:var(--gold-lt)">Sheikh Zayed bin Sultan Al Nahyan</strong>, whose compassion flowed like an endless spring and whose vision transformed a desert into a garden of hope.</p>
+      <p class="fw-p">Carrying his eternal flame forward are leaders whose brilliance continues to elevate the nation:</p>
+      <div class="fw-leader"><div class="fw-lname">Sheikh Mohammed bin Rashid Al Maktoum</div><div class="fw-ldesc">&mdash; whose imagination turns possibility into achievement.</div></div>
+      <div class="fw-leader"><div class="fw-lname">Sheikh Mohamed bin Zayed Al Nahyan</div><div class="fw-ldesc">&mdash; whose courage and clarity guide the nation with noble strength.</div></div>
+      <p class="fw-p" style="margin-top:.85rem">Centuries before this modern miracle, the Tamil sage <strong style="color:var(--gold-lt)">Thiruvalluvar</strong> offered humanity the timeless scripture of virtue &mdash; the <em>Thirukkural</em>, 1,330 couplets distilled into the essence of righteous living.</p>
+      <div class="fw-kural"><div class="fw-kta">அரசன் நீதியால் உலகம் நிலைபெறும்.</div><div class="fw-ken">Thirukkural &mdash; On Just Leadership: &ldquo;The world stands firm beneath the feet of the just ruler.&rdquo;</div></div>
+      <div class="fw-kural"><div class="fw-kta">கருணையே அறத்தின் முதல்வன்.</div><div class="fw-ken">Thirukkural &mdash; On Compassion: &ldquo;Compassion is the root of all noble qualities.&rdquo;</div></div>
+      <div class="fw-kural"><div class="fw-kta">ஒன்றுபட்டால் உயர்வு மலரும்.</div><div class="fw-ken">Thirukkural &mdash; On Unity: &ldquo;Where hearts unite, prosperity blossoms.&rdquo;</div></div>
+      <p class="fw-p">As we honor the UAE&rsquo;s journey, we honor also the eternal wisdom that reminds us that true progress is built on virtue, justice, compassion, and the upliftment of all humanity.</p>
+      <div class="fw-sig">Dr. Jayaprakash Ponraj<br/>Digital Heritage Contributor<br/>Abu Dhabi, United Arab Emirates &middot; May 2026</div>
+    </div>
+
+    <!-- TAMIL -->
+    <div class="fw-pane" id="fw-ta">
+      <div class="fw-title ta">முன்னுரை</div>
+      <p class="fw-p ta">மணற்குன்றின் மேல் உதிக்கும் விடியல்போல் கனவுகள் நனவாகும் தேசம் &mdash; ஒற்றுமை வலிமையாகும் நிலம் &mdash; ஞானம் ஒவ்வொரு திசையையும் ஒளிரச் செய்கிறது &mdash; அதுவே ஐக்கிய அரபு எமிரேட்ஸ்.</p>
+      <p class="fw-p ta">இந்த நாட்டின் இதயத்தில் நிற்பவர் <strong style="color:var(--gold-lt)">ஷேக் ஸாயித் பின் சுல்தான் அல் நஹ்யான்</strong>. அவரின் கருணை முடிவில்லா ஊற்றாக ஓடியது; அவரின் பார்வை பாலைவனத்தை நம்பிக்கையின் தோட்டமாக மாற்றியது.</p>
+      <p class="fw-p ta">அவரின் ஒளியைத் தொடர்ந்து இன்றும் நாட்டை உயர்த்தும் தலைவர்கள்:</p>
+      <div class="fw-leader"><div class="fw-lname ta">ஷேக் முகம்மது பின் ராஷித் அல் மக்க்தூம்</div><div class="fw-ldesc ta">&mdash; சாத்தியத்தை சாதனையாக மாற்றும் சிந்தனை.</div></div>
+      <div class="fw-leader"><div class="fw-lname ta">ஷேக் முகம்மது பின் ஸாயித் அல் நஹ்யான்</div><div class="fw-ldesc ta">&mdash; தைரியம், கருணை, தெளிவு ஆகியவற்றால் நாட்டை உயர்வின் பாதையில் நடத்தும் தலைவர்.</div></div>
+      <p class="fw-p ta" style="margin-top:.85rem">நூற்றாண்டுகளுக்கு முன், தமிழின் மாமுனிவர் <strong style="color:var(--gold-lt)">திருவள்ளுவர்</strong> திருக்குறள் எனும் பொக்கிஷத்தில் 1330 குறள்களால் அறத்தின் சாரத்தை உலகிற்கு வழங்கினார்.</p>
+      <div class="fw-kural"><div class="fw-kta">திருக்குறள் &mdash; நல்லாட்சி</div><div class="fw-ken">&ldquo;அரசன் நீதியால் உலகம் நிலைபெறும்.&rdquo;</div></div>
+      <div class="fw-kural"><div class="fw-kta">திருக்குறள் &mdash; கருணை</div><div class="fw-ken">&ldquo;கருணையே அறத்தின் முதல்வன்.&rdquo;</div></div>
+      <div class="fw-kural"><div class="fw-kta">திருக்குறள் &mdash; ஒற்றுமை</div><div class="fw-ken">&ldquo;ஒன்றுபட்டால் உயர்வு மலரும்.&rdquo;</div></div>
+      <p class="fw-p ta">எமிரேட்ஸ் நாட்டின் பயணத்தை நாம் கொண்டாடும் போது, மனிதகுலத்தை ஒளிக்குக் கொண்டு செல்லும் அந்த காலத்தால் அழியாத ஞானத்தையும் நாம் கௌரவிக்கிறோம்.</p>
+      <div class="fw-sig ta">Dr ஜெயபிரகாஸ் பொன்ராஜ்<br/>டிஜிட்டல் பாரம்பரிய பங்களிப்பாளர்<br/>அபுதாபி, ஐக்கிய அரபு எமிரேட்ஸ் &middot; மே 2026</div>
+    </div>
+
+    <!-- ARABIC -->
+    <div class="fw-pane rtl-pane" id="fw-ar">
+      <div class="fw-title ar">المقدمة</div>
+      <p class="fw-p ar">تنهض دولة الإمارات العربية المتحدة كقصيدة تُكتب على صفحة الصحراء، حيث تتحول الأحلام إلى واقع، وتصبح الوحدة قوة، وتصنع القيادة الحكيمة مستقبلًا يفيض بالنور.</p>
+      <p class="fw-p ar">وفي قلب هذا الوطن يقف <strong style="color:var(--gold-lt)">الشيخ زايد بن سلطان آل نهيان</strong>، قائد فاضت رحمته كنبع لا ينضب، وتحولت رؤيته إلى حدائق من الأمل.</p>
+      <p class="fw-p ar">ويمضي على خطاه قادة يحملون شعلة المجد بضياء متجدد:</p>
+      <div class="fw-leader"><div class="fw-lname ar">الشيخ محمد بن راشد آل مكتوم</div><div class="fw-ldesc ar">&mdash; الذي يحوّل الخيال إلى إنجاز.</div></div>
+      <div class="fw-leader"><div class="fw-lname ar">الشيخ محمد بن زايد آل نهيان</div><div class="fw-ldesc ar">&mdash; الذي يقود الوطن بثبات ونُبل.</div></div>
+      <p class="fw-p ar" style="margin-top:.85rem">قبل قرون من هذا المجد الحديث، قدّم الحكيم التاميلي <strong style="color:var(--gold-lt)">ثيروفاللوفار</strong> كتابه الخالد التيروكّورال، جامعًا فيه 1330 بيتًا من جوهر الفضيلة.</p>
+      <div class="fw-kural rtl-k"><div class="fw-kar">من التيروكّورال &mdash; عن الحكم العادل</div><div class="fw-ken" style="text-align:right">&ldquo;تستقيم الأرض تحت حكم الملك العادل.&rdquo;</div></div>
+      <div class="fw-kural rtl-k"><div class="fw-kar">من التيروكّورال &mdash; عن الرحمة</div><div class="fw-ken" style="text-align:right">&ldquo;الرحمة أصل كل فضيلة.&rdquo;</div></div>
+      <div class="fw-kural rtl-k"><div class="fw-kar">من التيروكّورال &mdash; عن الوحدة</div><div class="fw-ken" style="text-align:right">&ldquo;حيث تتحد القلوب، تزدهر البركة.&rdquo;</div></div>
+      <p class="fw-p ar">وفي احتفائنا بمسيرة الإمارات، نحتفي بالحكمة الخالدة التي تذكّرنا بأن التقدم الحقيقي يقوم على الفضيلة والعدل والرحمة ورفع شأن الإنسان.</p>
+      <div class="fw-sig ar">الدكتور جاياپراكاش بونراج<br/>مساهم في التراث الرقمي<br/>أبوظبي، الإمارات العربية المتحدة &middot; مايو 2026</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- DEDICATION PAGE -->
+<div class="ded-wrap noprint">
+  <button class="ded-toggle" id="dedToggle">
+    <span class="ded-toggle-left">&#10023;&nbsp; Dedication &middot; அர்ப்பணிப்பு &middot; الإهداء &nbsp;&mdash; <span style="font-size:.77rem;opacity:.75;font-style:normal">H.H. Sheikh Zayed bin Sultan Al Nahyan</span></span>
+    <span class="ded-toggle-right"><span style="font-size:.72rem;color:var(--white3);font-style:normal">click to read</span>&nbsp;<span class="ded-arrow">&#9660;</span></span>
+  </button>
+  <div class="ded-body" id="dedBody">
+    <div class="ded-langs">
+      <button class="ded-lang-btn active" data-pane="ded-en">&#127468;&#127463; English</button>
+      <button class="ded-lang-btn" data-pane="ded-ta">&#127470;&#127475; தமிழ்</button>
+      <button class="ded-lang-btn" data-pane="ded-ar">&#128332; العربية</button>
+    </div>
+
+    <!-- ENGLISH -->
+    <div class="ded-pane active" id="ded-en">
+      <div class="ded-emblem">&#10023;</div>
+      <div class="ded-text">To H.H. Sheikh Zayed bin Sultan Al Nahyan<br/>
+Father of the Nation &middot; Founder of the UAE<br/>
+&#127462;&#127466;<br/><br/>
+With profound respect and heartfelt gratitude,<br/>
+this work is dedicated to the noble legacy of a leader<br/>
+whose vision transformed a desert into a home for the world,<br/>
+whose compassion uplifted every community,<br/>
+and whose wisdom continues to guide generations.<br/><br/>
+Sheikh Zayed believed in the dignity of every human being,<br/>
+in the power of knowledge,<br/>
+and in the beauty of unity across cultures and faiths.<br/>
+His life was a living testament to the values<br/>
+that Thiruvalluvar wrote about more than two millennia ago &mdash;<br/>
+justice, compassion, humility, and righteous leadership.<br/><br/>
+May this trilingual edition of the Thirukkural<br/>
+serve as a bridge between civilizations,<br/>
+a tribute to the multicultural spirit of the UAE,<br/>
+and a humble offering to the enduring light<br/>
+of Sheikh Zayed&rsquo;s legacy.<br/><br/>
+<em>His memory is a blessing.<br/>
+His vision is a guiding star.<br/>
+His humanity lives on in the heart of every UAEite.</em></div>
+      <div class="ded-sig">Dr. Jayaprakash Ponraj<br/>Digital Heritage Contributor<br/>Abu Dhabi, United Arab Emirates &middot; May 2026</div>
+    </div>
+
+    <!-- TAMIL -->
+    <div class="ded-pane" id="ded-ta">
+      <div class="ded-emblem">&#10023;</div>
+      <div class="ded-text ta">மாண்புமிகு ஷேக் ஸாயித் பின் சுல்தான் அல் நஹ்யான் அவர்களுக்கு<br/>
+தேசத்தின் தந்தை &middot; ஐக்கிய அரபு எமிரேட்ஸின் நிறுவனர்<br/>
+&#127462;&#127466;<br/><br/>
+ஆழமான மரியாதையுடனும் உளமார்ந்த நன்றியுடனும்,<br/>
+இந்த நூல் அர்ப்பணிக்கப்படுகிறது<br/>
+பாலைவனத்தை உலகின் இல்லமாக மாற்றிய தலைவரின்<br/>
+உன்னத மரபிற்கு &mdash;<br/>
+ஒவ்வொரு சமுதாயத்தையும் உயர்த்திய கருணைக்கு,<br/>
+தலைமுறைகளை வழிநடத்தும் அவரின் ஞானத்திற்கு.<br/><br/>
+ஷேக் ஸாயித் நம்பினார் &mdash;<br/>
+ஒவ்வொரு மனித உயிரின் கண்ணியத்தில்,<br/>
+அறிவின் வலிமையில்,<br/>
+கலாசாரங்களையும் நம்பிக்கைகளையும் தாண்டிய<br/>
+ஒற்றுமையின் அழகில்.<br/><br/>
+அவரின் வாழ்க்கை,<br/>
+திருவள்ளுவர் இரண்டாயிரம் ஆண்டுகளுக்கு முன் எழுதிய<br/>
+நீதி, கருணை, பணிவு, நேர்மையான தலைமை<br/>
+ஆகிய மதிப்புகளின் வாழும் சாட்சியம்.<br/><br/>
+இந்த மூன்று மொழி திருக்குறள் பதிப்பு<br/>
+நாகரிகங்களுக்கிடையே ஒரு பாலமாகவும்,<br/>
+ஐக்கிய அரபு எமிரேட்ஸின் பன்மை கலாசார உள்ளத்திற்கு<br/>
+ஒரு அஞ்சலியாகவும்,<br/>
+ஷேக் ஸாயித்தின் நிரந்தர ஒளிக்கு<br/>
+ஒரு தாழ்மையான காணிக்கையாகவும் அமையட்டும்.<br/><br/>
+<em>அவரின் நினைவு ஒரு ஆசீர்வாதம்.<br/>
+அவரின் தொலைநோக்கு ஒரு வழிகாட்டும் நட்சத்திரம்.<br/>
+அவரின் மனிதநேயம் ஒவ்வொரு எமிரேட்ஸ் இதயத்திலும் வாழ்கிறது.</em></div>
+      <div class="ded-sig ta">Dr ஜெயபிரகாஸ் பொன்ராஜ்<br/>டிஜிட்டல் பாரம்பரிய பங்களிப்பாளர்<br/>அபுதாபி, ஐக்கிய அரபு எமிரேட்ஸ் &middot; மே 2026</div>
+    </div>
+
+    <!-- ARABIC -->
+    <div class="ded-pane rtl-pane" id="ded-ar">
+      <div class="ded-emblem">&#10023;</div>
+      <div class="ded-text ar">إلى سمو الشيخ زايد بن سلطان آل نهيان<br/>
+والد الأمة &middot; مؤسس الإمارات العربية المتحدة<br/>
+&#127462;&#127466;<br/><br/>
+بعميق الاحترام وصادق الامتنان،<br/>
+تُهدى هذه الأثر إلى الإرث النبيل لقائد<br/>
+حوّلت رؤيته الصحراء إلى موطن للعالم،<br/>
+ورفعت رحمته كل مجتمع،<br/>
+وما زالت حكمته تهدي الأجيال.<br/><br/>
+آمن الشيخ زايد بكرامة كل إنسان،<br/>
+وبقوة المعرفة،<br/>
+وبجمال الوحدة عبر الثقافات والأديان.<br/>
+كانت حياته شهادة حية على القيم<br/>
+التي كتب عنها ثيروفاللوفار منذ أكثر من ألفين عام &mdash;<br/>
+العدل، والرحمة، والتواضع، والقيادة الصالحة.<br/><br/>
+فليكن هذا الإصدار ثلاثي اللغات من التيروكّورال<br/>
+جسرًا بين الحضارات،<br/>
+وتحيةً لروح الإمارات متعددة الثقافات،<br/>
+وإهداءً متواضعًا للنور الخالد<br/>
+لإرث الشيخ زايد.<br/><br/>
+<em>ذكراه باركة.<br/>
+رؤيته نجم يهدي المسير.<br/>
+إنسانيته تحيا في قلب كل إماراتي.</em></div>
+      <div class="ded-sig ar">الدكتور جاياپراكاش بونراج<br/>مساهم في التراث الرقمي<br/>أبوظبي، الإمارات العربية المتحدة &middot; مايو 2026</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- PHOTO GALLERY -->
+<div class="gallery-wrap noprint">
+  <button class="gallery-toggle" id="galleryToggle">
+    <span class="gallery-toggle-left">&#128247;&nbsp; Heritage Gallery &mdash; Tamil Nadu &amp; United Arab Emirates</span>
+    <span style="display:flex;align-items:center;gap:.5rem">
+      <span style="font-size:.72rem;color:var(--white3)">click to view</span>
+      <span class="gallery-arrow">&#9660;</span>
+    </span>
+  </button>
+  <div class="gallery-body" id="galleryBody">
+    <p class="gallery-intro">A visual bridge between two ancient civilizations &mdash; the Tamil heartland and the golden sands of Arabia.</p>
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="photos/thiruvalluvar.jpg" alt="Thiruvalluvar Statue, Kanyakumari" loading="lazy"/>
+        <div class="gallery-card-body">
+          <div class="gallery-card-title">Thiruvalluvar Statue, Kanyakumari</div>
+          <div class="gallery-card-sub">The 133-foot monumental statue of the poet-sage at the southern tip of India, where three oceans meet &mdash; representing the 133 chapters of Thirukkural.</div>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="photos/madurai.jpg" alt="Meenakshi Amman Temple, Madurai" loading="lazy"/>
+        <div class="gallery-card-body">
+          <div class="gallery-card-title">Meenakshi Amman Temple, Madurai</div>
+          <div class="gallery-card-sub">Ancient Dravidian temple of Madurai &mdash; the city where Tamil literature and the great Sangam tradition flourished for over two millennia.</div>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="photos/manuscript.jpg" alt="Ancient Tirukkural Manuscript" loading="lazy"/>
+        <div class="gallery-card-body">
+          <div class="gallery-card-title">Ancient Tirukkural Palm-Leaf Manuscript</div>
+          <div class="gallery-card-sub">The medium through which 2,000 years of Tamil wisdom survived &mdash; inscribed by stylus on dried palm leaves, passed down across generations.</div>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="photos/mosque.jpg" alt="Sheikh Zayed Grand Mosque, Abu Dhabi" loading="lazy"/>
+        <div class="gallery-card-body">
+          <div class="gallery-card-title">Sheikh Zayed Grand Mosque, Abu Dhabi</div>
+          <div class="gallery-card-sub">Named after H.H. Sheikh Zayed bin Sultan Al Nahyan, Founder of the UAE. One of the world&rsquo;s largest mosques, embodying his vision of unity and spiritual grandeur.</div>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="photos/abudhabi.jpg" alt="Abu Dhabi at Night" loading="lazy"/>
+        <div class="gallery-card-body">
+          <div class="gallery-card-title">Abu Dhabi at Night</div>
+          <div class="gallery-card-sub">The gleaming capital of the UAE &mdash; where ancient wisdom and modern vision unite under the enduring legacy of Sheikh Zayed.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="ctrl-wrap noprint">
+  <div class="ctrl-bar">
+    <div class="sw"><span class="si">⌕</span>
+      <input type="text" id="srch" placeholder="Search Tamil, English, Arabic, chapter…" autocomplete="off"/>
+    </div>
+    <select id="chSel"><option value="">All 133 Chapters</option></select>
+    <select id="ppSel">
+      <option value="20">20 / page</option>
+      <option value="30">30 / page</option>
+      <option value="50">50 / page</option>
+      <option value="100">100 / page</option>
+    </select>
+    <button class="ibtn" id="rndBtn">🎲 Random</button>
+    <button class="ibtn" id="printPageBtn" title="Print current page">🖨️ Print Page</button>
+    <button class="ibtn" id="printBookBtn" title="Print all 1330 kurals as PDF book">📖 Print Book</button>
+  </div>
+  <div class="pal-tabs">
+    <button class="ptab on" data-pal="">All Kurals</button>
+    <button class="ptab v" data-pal="அறத்துப்பால்">அறத்துப்பால் · Virtue (1–380)</button>
+    <button class="ptab w" data-pal="பொருட்பால்">பொருட்பால் · Wealth (381–1080)</button>
+    <button class="ptab l" data-pal="காமத்துப்பால்">காமத்துப்பால் · Love (1081–1330)</button>
+  </div>
+</div>
+
+<div class="stats noprint" id="stats"></div>
+<div class="pager noprint" id="pgTop"></div>
+<div class="kgrid" id="kgrid"></div>
+<div class="pager noprint" id="pgBot"></div>
+
+<!-- MODAL -->
+<div class="mov noprint" id="mov">
+  <div class="modal">
+    <button class="mcl" id="mcl">✕</button>
+    <div class="mnum" id="mNum"></div>
+    <div class="mch"  id="mCh"></div>
+    <div class="mtamil" id="mTamil"></div>
+    <div class="mti"  id="mTi"></div>
+    <div class="msec"><span class="msl">English Couplet</span><div class="mengl" id="mEn"></div></div>
+    <div class="msec"><span class="msl">Tamil Commentary</span><div class="mmv"  id="mMv"></div></div>
+    <div class="msec" id="mExSec"><span class="msl">English Explanation</span><div class="mex2" id="mEx"></div></div>
+    <div class="mar">
+      <div class="marh">🕌 Arabic Translation · الترجمة العربية <span></span></div>
+      <div class="mara" id="mAra"></div>
+      <div class="mart" id="mArt"></div>
+      <div class="marm" id="mArm"></div>
+    </div>
+    <div class="mnav">
+      <button id="mPrev">← Previous</button>
+      <span class="mpos" id="mPos"></span>
+      <button id="mNext">Next →</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- PRINT BOOK OVERLAY -->
+<div id="printOverlay" style="display:none;position:fixed;inset:0;background:rgba(5,16,30,.97);z-index:2000;
+  align-items:center;justify-content:center;flex-direction:column;gap:1rem">
+  <div style="font-size:1.1rem;color:var(--gold-lt)">Preparing PDF Book…</div>
+  <div style="font-size:.85rem;color:var(--white3)" id="printProgress">Loading all 1330 kurals…</div>
+  <div style="width:320px;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+    <div id="printBar" style="height:100%;width:0%;background:var(--accent);transition:width .3s;border-radius:3px"></div>
+  </div>
+  <button onclick="document.getElementById('printOverlay').style.display='none'"
+    style="margin-top:.5rem;padding:.4rem 1rem;border:1px solid var(--border);border-radius:5px;
+    background:transparent;color:var(--white3);cursor:pointer">Cancel</button>
+</div>
+
+
+<!-- VERSION HISTORY (collapsed by default) -->
+<div class="vh-wrap noprint">
+  <button class="vh-toggle" id="vhToggle">
+    <span class="vht-left">📋 <strong>Version History</strong> &nbsp;·&nbsp; <span class="ver-tag" style="font-size:.68rem">v4-arabic</span></span>
+    <span class="vht-arrow">▼</span>
+  </button>
+  <div class="vh-body" id="vhBody">
+    <table class="vertable2">
+      <thead><tr><th>Version</th><th>Date</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr class="vc">
+          <td><span class="ver-tag">v4-arabic</span></td>
+          <td>26 May 2026</td>
+          <td>Complete built-in Arabic translation (script · transliteration · meaning) for all 1330 kurals. Chapter-accurate Arabic meanings for all 133 chapters. Commentary visible by default. Single-kural PDF print &amp; full 1330-kural PDF book with Sheikh Zayed dedication. Fully self-contained — zero API dependency.</td>
+        </tr>
+        <tr>
+          <td>v3</td><td>24 May 2026</td>
+          <td>Dark blue professional redesign. API-powered Arabic + 16-language translation. Fixed 401 authentication, undefined field errors, backtick data bugs.</td>
+        </tr>
+        <tr>
+          <td>v2</td><td>24 May 2026</td>
+          <td>Complete 1330-kural dataset from Open Tamil source. All 133 chapter metadata. Modal with keyboard navigation, pagination, search and filter.</td>
+        </tr>
+        <tr>
+          <td>v1</td><td>23 May 2026</td>
+          <td>Initial interactive HTML. Tamil, English, transliteration. Basic search, chapter filter and AI translation scaffolding.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<button class="btt" id="btt" title="Back to top">↑</button>
+
+<button class="btt" id="btt" title="Back to top">↑</button>
+<button class="btt" id="btt" title="Back to top">↑</button>
+<footer>
+  <strong>திருக்குறள் · Thirukkural · ثيروكورال</strong><br/>
+  All 1330 Kurals · Tamil · English · Arabic · Complete &amp; Self-Contained<br/>
+  Dedicated to <strong>H.H. Sheikh Zayed bin Sultan Al Nahyan</strong> · Father of the UAE 🇦🇪<br/>
+  <em style="font-size:.72rem;color:var(--white3)">
+    Tamil text: Open Tamil Dataset · English: G.U. Pope &amp; others · Arabic: Scholarly derivation<br/>
+    Compiled &amp; Curated by <strong style="color:var(--gold-lt)">Dr. Jayaprakash Ponraj</strong> · Digital Heritage Contributor · v4-arabic · 26 May 2026
+  </em>
+</footer>
+<script src="kurals_data.js"></script>
+<script>
+
+function s(v){ return (v==null||v==='undefined')?'':String(v); }
+function pc(pl){ return pl==='அறத்துப்பால்'?'v':pl==='பொருட்பால்'?'w':'l'; }
+function ar(n){ return ARABIC[String(n)]||{a:'',t:'',m:''}; }
+
+// ── Chapter select ──
+const chSel = document.getElementById('chSel');
+const seen = new Set();
+KURALS.forEach(k=>{
+  if(!seen.has(k.ch)){
+    seen.add(k.ch);
+    const o=document.createElement('option');
+    o.value=k.ch; o.textContent=k.ch+'. '+s(k.ca)+' · '+s(k.ce);
+    chSel.appendChild(o);
+  }
+});
+
+// ── State ──
+let filtered=[...KURALS], page=1, pp=20;
+function debounce(fn,ms){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms)};}
+
+function applyFilters(){
+  const q=document.getElementById('srch').value.trim().toLowerCase();
+  const pal=document.querySelector('.ptab.on').dataset.pal;
+  const ch=document.getElementById('chSel').value;
+  filtered=KURALS.filter(k=>{
+    if(pal&&k.pl!==pal)return false;
+    if(ch&&k.ch!=ch)return false;
+    if(q){
+      const ar_data=ar(k.n);
+      const hay=(k.n+' '+s(k.l1)+' '+s(k.l2)+' '+s(k.en)+' '+s(k.tr)+' '+
+        s(k.mv)+' '+s(k.sp)+' '+s(k.ex)+' '+s(k.ca)+' '+s(k.ce)+' '+
+        s(k.ti1)+' '+s(k.ti2)+' '+s(ar_data.a)+' '+s(ar_data.m)).toLowerCase();
+      if(!hay.includes(q))return false;
+    }
+    return true;
+  });
+  page=1; render();
+}
+
+document.getElementById('srch').addEventListener('input',debounce(applyFilters,250));
+document.getElementById('chSel').addEventListener('change',applyFilters);
+document.getElementById('ppSel').addEventListener('change',()=>{pp=+document.getElementById('ppSel').value;page=1;render();});
+document.querySelectorAll('.ptab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.ptab').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');
+  document.getElementById('chSel').value='';
+  applyFilters();
+}));
+document.getElementById('rndBtn').addEventListener('click',()=>{
+  openModal(Math.floor(Math.random()*KURALS.length));
+});
+
+// ── Card builder ──
+function makeCard(k){
+  const c=pc(k.pl), a=ar(k.n);
+  const mvText=s(k.mv)||s(k.sp)||s(k.mk)||'';
+  const exText=s(k.ex)||'';
+  const div=document.createElement('div');
+  div.className='kcard ex '+c;
+  div.innerHTML=
+    '<div class="ct">'+
+      '<div class="cm">'+
+        '<div class="kn" data-n="'+k.n+'" title="Full view of Kural '+k.n+'">குறள் '+k.n+'</div>'+
+        '<div class="cb" data-ch="'+k.ch+'" title="Filter: '+s(k.ce)+'"><b>'+s(k.ce)+'</b>'+s(k.ca)+'</div>'+
+      '</div>'+
+      '<div class="tl">'+s(k.l1)+'<br>'+s(k.l2)+'</div>'+
+      (s(k.ti1)?'<div class="ti">'+s(k.ti1)+' / '+s(k.ti2)+'</div>':'')+
+      '<div class="ec">'+(s(k.tr)||s(k.en))+'</div>'+
+    '</div>'+
+    '<div class="ars">'+
+      '<div class="arl">🕌 Arabic · العربية</div>'+
+      (a.a?'<div class="ara">'+a.a+'</div>':'')+
+      (a.t?'<div class="art">'+a.t+'</div>':'')+
+      (a.m?'<div class="arm">'+a.m+'</div>':'')+
+    '</div>'+
+    (mvText||exText?
+      '<div class="cex">'+
+        (mvText?'<div class="mv">'+mvText+'</div>':'')+
+        (exText?'<div class="en2">'+exText+'</div>':'')+
+      '</div>':'')
+    +
+    '<div class="cf">'+
+      (mvText||exText?'<button class="cta exp-btn">▲ Commentary</button>':'')+
+      '<button class="cta fullv-btn">⊞ Full View</button>'+
+      '<button class="cta prt-btn">🖨️ Print</button>'+
+    '</div>';
+
+  if(mvText||exText){
+    div.querySelector('.exp-btn').addEventListener('click',e=>{
+      e.stopPropagation();
+      div.classList.toggle('ex');
+      e.target.textContent=div.classList.contains('ex')?'▲ Commentary':'▼ Commentary';
+    });
+  }
+  div.querySelector('.fullv-btn').addEventListener('click',e=>{
+    e.stopPropagation(); openModal(k.n-1);
+  });
+  div.querySelector('.prt-btn').addEventListener('click',e=>{
+    e.stopPropagation(); printSingle(k);
+  });
+  div.addEventListener('click',()=>{
+    if(mvText||exText){
+      div.classList.toggle('ex');
+      const b=div.querySelector('.exp-btn');
+      if(b)b.textContent=div.classList.contains('ex')?'▲ Commentary':'▼ Commentary';
+    }
+  });
+  return div;
+}
+
+// ── Render ──
+function render(){
+  pp=+document.getElementById('ppSel').value;
+  const total=filtered.length, pages=Math.max(1,Math.ceil(total/pp));
+  page=Math.min(page,pages);
+  const start=(page-1)*pp, slice=filtered.slice(start,start+pp);
+  document.getElementById('stats').innerHTML=
+    '<span>Showing <strong>'+(start+1)+'–'+Math.min(start+pp,total)+'</strong> of <strong>'+total+'</strong> kurals</span>'+
+    '<span>Page '+page+' of '+pages+'</span>';
+  const grid=document.getElementById('kgrid');
+  grid.innerHTML='';
+  slice.forEach(k=>grid.appendChild(makeCard(k)));
+  renderPager('pgTop',pages); renderPager('pgBot',pages);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderPager(id,pages){
+  const el=document.getElementById(id);
+  if(pages<=1){el.innerHTML='';return;}
+  let h='';
+  h+='<button class="pb" onclick="goPage(1)" '+(page===1?'disabled':'')+'>«</button>';
+  h+='<button class="pb" onclick="goPage('+(page-1)+')" '+(page===1?'disabled':'')+'>‹</button>';
+  const s2=Math.max(1,page-2),e=Math.min(pages,page+2);
+  if(s2>1)h+='<span class="pdots">…</span>';
+  for(let p=s2;p<=e;p++)h+='<button class="pb '+(p===page?'cur':'')+'" onclick="goPage('+p+')">'+p+'</button>';
+  if(e<pages)h+='<span class="pdots">…</span>';
+  h+='<button class="pb" onclick="goPage('+(page+1)+')" '+(page===pages?'disabled':'')+'>›</button>';
+  h+='<button class="pb" onclick="goPage('+pages+')" '+(page===pages?'disabled':'')+'>»</button>';
+  el.innerHTML=h;
+}
+window.goPage=p=>{page=p;render();};
+
+// ── Modal ──
+let mIdx=0;
+const palFull={'அறத்துப்பால்':'Arattupal · Book of Virtue','பொருட்பால்':'Porutpal · Book of Wealth','காமத்துப்பால்':'Kamattupal · Book of Love'};
+function openModal(idx){
+  mIdx=idx; const k=KURALS[idx], a=ar(k.n);
+  document.getElementById('mNum').textContent='குறள் '+k.n+'  ·  Kural '+k.n;
+  document.getElementById('mCh').innerHTML='Chapter '+k.ch+': <em>'+s(k.ca)+' · '+s(k.ce)+'</em> | <em>'+(palFull[k.pl]||s(k.pl))+'</em>';
+  document.getElementById('mTamil').innerHTML=s(k.l1)+'<br>'+s(k.l2);
+  document.getElementById('mTi').textContent=(s(k.ti1)&&s(k.ti2))?s(k.ti1)+' / '+s(k.ti2):'';
+  document.getElementById('mEn').textContent=s(k.en)||s(k.tr)||'';
+  document.getElementById('mMv').textContent=s(k.mv)||s(k.sp)||s(k.mk)||'';
+  const exText=s(k.ex)||'';
+  document.getElementById('mExSec').style.display=exText?'block':'none';
+  document.getElementById('mEx').textContent=exText;
+  document.getElementById('mAra').textContent=a.a||'';
+  document.getElementById('mArt').textContent=a.t?'🔤 '+a.t:'';
+  document.getElementById('mArm').textContent=a.m||'';
+  document.getElementById('mPrev').disabled=idx===0;
+  document.getElementById('mNext').disabled=idx===KURALS.length-1;
+  document.getElementById('mPos').textContent=(idx+1)+' / '+KURALS.length;
+  document.getElementById('mov').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+document.getElementById('mcl').addEventListener('click',closeModal);
+document.getElementById('mov').addEventListener('click',e=>{if(e.target===document.getElementById('mov'))closeModal();});
+document.getElementById('mPrev').addEventListener('click',()=>{if(mIdx>0)openModal(mIdx-1);});
+document.getElementById('mNext').addEventListener('click',()=>{if(mIdx<KURALS.length-1)openModal(mIdx+1);});
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('mov').classList.contains('open'))return;
+  if(e.key==='Escape')closeModal();
+  if(e.key==='ArrowLeft'&&mIdx>0)openModal(mIdx-1);
+  if(e.key==='ArrowRight'&&mIdx<KURALS.length-1)openModal(mIdx+1);
+});
+function closeModal(){document.getElementById('mov').classList.remove('open');document.body.style.overflow='';}
+
+// ── PRINT SINGLE KURAL ──
+function printSingle(k){
+  var a=ar(k.n);
+  var mvText=s(k.mv)||s(k.sp)||s(k.mk)||'';
+  var exText=s(k.ex)||'';
+  var palNames={'அறத்துப்பால்':'Arattupal','பொருட்பால்':'Porutpal','காமத்துப்பால்':'Kamattupal'};
+  var palCol={'அறத்துப்பால்':'#8b2020','பொருட்பால்':'#1a8080','காமத்துப்பால்':'#7a6030'};
+  var col=palCol[k.pl]||'#7a5f00';
+  var w=window.open('','_blank','width=820,height=750');
+  var pg='<!DOCTYPE html><html><head><meta charset="UTF-8"/>'
+  +'<title>Thirukkural '+k.n+'</title>'
+  +'<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet"/>'
+  +'<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:"EB Garamond",Georgia,serif;background:#fff;color:#1a1000;padding:2.5cm;max-width:21cm;margin:0 auto;font-size:11pt}.ta{font-family:"Noto Serif Tamil","Noto Sans Tamil",serif}.ar{font-family:"Noto Naskh Arabic",serif;direction:rtl;text-align:right}.top-bar{height:4px;background:linear-gradient(90deg,'+col+',#c8a84b,'+col+');margin:-2.5cm -2.5cm 1.5rem;width:calc(100% + 5cm)}.knum{font-size:8pt;letter-spacing:.15em;color:'+col+';font-weight:700;text-transform:uppercase;margin-bottom:.3rem}.chapter{font-size:9pt;color:#888;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid #e0d0a0}.tamil{font-family:"Noto Serif Tamil","Noto Sans Tamil",serif;font-size:15pt;line-height:2;font-weight:700;border-left:4px solid #c8a84b;padding:.4rem 0 .4rem 1rem;margin-bottom:.5rem}.translit{font-size:9pt;color:#888;font-style:italic;margin-bottom:1rem;padding-left:1.1rem}.section{margin-bottom:.9rem}.slabel{font-size:7pt;letter-spacing:.15em;text-transform:uppercase;color:'+col+';display:block;margin-bottom:.25rem;font-weight:700}.english{font-style:italic;font-size:11pt;line-height:1.7;color:#333}.mv{font-family:"Noto Serif Tamil","Noto Sans Tamil",serif;font-size:9.5pt;line-height:1.8;color:#555;background:#f8f8f5;padding:.5rem .7rem;border-radius:3px;border-left:2px solid #1a8080}.ar-block{background:#fffaee;border:1px solid #d4b882;border-radius:5px;padding:.7rem .9rem;margin-top:.7rem}.ar-label{font-size:7pt;letter-spacing:.13em;text-transform:uppercase;color:#7a5f00;margin-bottom:.4rem;font-weight:700}.ar-script{font-family:"Noto Naskh Arabic",serif;font-size:13pt;direction:rtl;text-align:right;color:#2a1800;line-height:2.1;margin-bottom:.3rem}.ar-translit{font-size:8pt;color:#7a5f00;font-style:italic;margin-bottom:.3rem}.ar-meaning{font-family:"Noto Naskh Arabic",serif;font-size:9.5pt;direction:rtl;text-align:right;color:#3a2800;line-height:1.9}.footer-bar{margin-top:1.5rem;padding-top:.8rem;border-top:1px solid #e0d0a0;font-size:8.5pt;color:#999;text-align:center;line-height:1.7}@media print{@page{margin:2cm;size:A4}body{padding:0}}</style>'
+  +'</head><body>'
+  +'<div class="top-bar"></div>'
+  +'<div class="knum">குறள் '+k.n+' · Kural '+k.n+'</div>'
+  +'<div class="chapter">Chapter '+k.ch+': '+s(k.ca)+' · '+s(k.ce)+' | '+(palNames[k.pl]||s(k.pl))+'</div>'
+  +'<div class="tamil ta">'+s(k.l1)+'<br>'+s(k.l2)+'</div>'
+  +(s(k.ti1)?'<div class="translit">'+s(k.ti1)+' / '+s(k.ti2)+'</div>':'')
+  +'<div class="section"><span class="slabel">English Couplet</span>'
+  +'<div class="english">'+(s(k.tr)||s(k.en))+'</div></div>'
+  +(mvText?'<div class="section"><span class="slabel">Tamil Commentary</span>'
+  +'<div class="mv ta">'+mvText+'</div></div>':'')
+  +(exText?'<div class="section"><span class="slabel">English Explanation</span>'
+  +'<div style="font-size:9pt;color:#666;font-style:italic">'+exText+'</div></div>':'')
+  +(a.a?'<div class="ar-block"><div class="ar-label">م Arabic · العربية</div>'
+  +'<div class="ar-script ar">'+a.a+'</div>'
+  +(a.t?'<div class="ar-translit">'+a.t+'</div>':'')
+  +(a.m?'<div class="ar-meaning ar">'+a.m+'</div>':'')
+  +'</div>':'')
+  +'<div class="footer-bar">திருக்குறள் · Thirukkural · v4-arabic<br/>'
+  +'Dedicated to H.H. Sheikh Zayed bin Sultan Al Nahyan<br/>'
+  +'Compiled by Dr. Jayaprakash Ponraj · Abu Dhabi</div>'
+  +'</body></html>';
+  w.document.write(pg);
+  w.document.close();
+}
+
+// ── PRINT CURRENT PAGE ──
+document.getElementById('printPageBtn').addEventListener('click',()=>{
+  window.print();
+});
+
+// ── PRINT FULL BOOK (all 1330) ──
+document.getElementById('printBookBtn').addEventListener('click', async function(){
+  var ov=document.getElementById('printOverlay');
+  var prog=document.getElementById('printProgress');
+  var bar=document.getElementById('printBar');
+  ov.style.display='flex';
+
+  var palCol={
+    'அறத்துப்பால்':'#8b2020',
+    'பொருட்பால்':'#1a5c5c',
+    'காமத்துப்பால்':'#7a5f00'
+  };
+
+  var pages='';
+  for(var i=0;i<KURALS.length;i++){
+    var k=KURALS[i], a=ar(k.n);
+    var col=palCol[k.pl]||'#1a3a5c';
+    var mvText=s(k.mv)||s(k.sp)||s(k.mk)||'';
+    var exText=s(k.ex)||'';
+    if(i%50===0){
+      prog.textContent='Building kural '+(i+1)+' of '+KURALS.length+'...';
+      bar.style.width=Math.round(i/KURALS.length*100)+'%';
+      await new Promise(function(r){setTimeout(r,0);});
+    }
+    var pg='<div style="border:1px solid #ddd;border-radius:4px;padding:1rem 1.1rem;margin-bottom:.9rem;page-break-inside:avoid;background:#fff;position:relative">';
+    pg+='<div style="height:3px;background:linear-gradient(90deg,'+col+',#c8a84b,'+col+');border-radius:2px 2px 0 0;position:absolute;top:0;left:0;right:0"></div>';
+    pg+='<div style="display:flex;justify-content:space-between;margin-bottom:.5rem;gap:.5rem">';
+    pg+='<div style="font-size:9pt;letter-spacing:.08em;color:'+col+';font-weight:700;font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">குறள் '+k.n+'</div>';
+    pg+='<div style="font-size:8.5pt;color:#666;text-align:right;line-height:1.4"><b style="color:#333;display:block">'+s(k.ce)+'</b>'+s(k.ca)+'</div></div>';
+    pg+='<div style="font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif;font-size:11pt;line-height:1.95;font-weight:600;border-left:3px solid #c8a84b;padding:.3rem 0 .3rem .7rem;margin-bottom:.35rem">'+s(k.l1)+'<br>'+s(k.l2)+'</div>';
+    if(s(k.ti1)) pg+='<div style="font-size:8pt;color:#888;font-style:italic;margin-bottom:.35rem;padding-left:.75rem">'+s(k.ti1)+' / '+s(k.ti2)+'</div>';
+    pg+='<div style="font-style:italic;font-size:9.5pt;color:#333;margin-bottom:.45rem;font-family:\"EB Garamond\",Georgia,serif">'+(s(k.tr)||s(k.en))+'</div>';
+    if(mvText) pg+='<div style="font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif;font-size:8.5pt;line-height:1.75;color:#444;background:#f8f8f5;padding:.38rem .55rem;border-radius:3px;border-left:2px solid #1a8080;margin-bottom:.38rem">'+mvText+'</div>';
+    if(exText) pg+='<div style="font-size:8.2pt;color:#555;font-style:italic;margin-bottom:.38rem">'+exText+'</div>';
+    pg+='<div style="background:#fffaee;border:1px solid #d4b882;border-radius:3px;padding:.55rem .7rem;margin-top:.35rem">';
+    pg+='<div style="font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:#7a5f00;margin-bottom:.28rem;font-weight:700;font-family:Georgia,serif">م Arabic · العربية</div>';
+    pg+='<div style="font-family:\"Noto Naskh Arabic\",serif;font-size:11pt;direction:rtl;text-align:right;color:#2a1800;line-height:2;margin-bottom:.22rem">'+a.a+'</div>';
+    if(a.t) pg+='<div style="font-size:7.5pt;color:#7a5f00;font-style:italic;margin-bottom:.22rem;font-family:Georgia,serif">'+a.t+'</div>';
+    if(a.m) pg+='<div style="font-family:\"Noto Naskh Arabic\",serif;font-size:8.5pt;direction:rtl;text-align:right;color:#3a2800;line-height:1.85">'+a.m+'</div>';
+    pg+='</div></div>';
+    pages+=pg;
+  }
+
+  bar.style.width='100%';
+  prog.textContent='Opening print dialog...';
+  await new Promise(function(r){setTimeout(r,300);});
+
+  var w=window.open('','_blank');
+  w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"/>'
+  +'<title>Thirukkural - Complete 1330 Kurals</title>'
+  +'<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600&display=swap" rel="stylesheet"/>'
+
+  +'<style>'
+  +'*{box-sizing:border-box;margin:0;padding:0}'
+  +'body{font-family:"EB Garamond","Playfair Display",Georgia,serif;background:#fff;color:#1a1000;padding:0;font-size:11pt;line-height:1.6;max-width:100%}'
+  +'.ta{font-family:"Noto Serif Tamil","Noto Sans Tamil",sans-serif}'
+  +'.ar{font-family:"Noto Naskh Arabic",serif;direction:rtl;text-align:right}'
+  +'h1,h2,h3{font-family:"EB Garamond","Playfair Display",Georgia,serif}'
+  +'p{margin-bottom:.7em}'
+  +'@media print{@page{margin:2cm;size:A4}body{font-size:10.5pt}}'
+  +'</style>'
+  +'</head><body>'
+  +'<div style="min-height:26cm;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;page-break-after:always;border:2px solid #c8a84b;border-radius:4px;padding:3cm 2.5cm;background:#fffef8">'
+  +'<div style="font-size:8pt;letter-spacing:.22em;color:#7a5f00;margin-bottom:.8rem;text-transform:uppercase;font-family:Georgia,serif">Complete Edition &middot; v4-Arabic &middot; 26 May 2026</div>'
+  +'<h1 style="font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif;font-size:42pt;line-height:1.2;color:#1a1000;margin-bottom:.5rem">திருக்குறள்</h1>'
+  +'<h2 style="font-size:18pt;letter-spacing:.28em;color:#7a5f00;margin-bottom:.5rem;font-family:Georgia,serif">THIRUKKURAL</h2>'
+  +'<div style="height:1px;background:linear-gradient(90deg,transparent,#c8a84b,transparent);margin:.8rem auto;width:60%;max-width:12cm"></div>'
+  +'<div style="font-size:11pt;color:#555;line-height:2;font-family:Georgia,serif">'
+  +'<strong>All 1330 Kurals &middot; 133 Chapters &middot; 3 Books</strong><br/>'
+  +'Tamil &middot; English &middot; Arabic<br/>Composed by Thiruvalluvar &middot; Over 2,000 Years of Wisdom</div>'
+  +'<div style="margin-top:1.5rem;padding:1rem 2rem;border-top:1px solid #d4b882;border-bottom:1px solid #d4b882;font-size:10pt;color:#777;font-style:italic;line-height:1.8;font-family:Georgia,serif">'
+  +'Dedicated with reverence to<br/>'
+  +'<strong style="font-size:12pt;color:#7a5f00;font-style:normal">H.H. Sheikh Zayed bin Sultan Al Nahyan</strong><br/>'
+  +'Father of the UAE &#127462;&#127466;</div>'
+  +'<div style="margin-top:1.5rem;font-size:10pt;color:#5a4020;line-height:2">'
+  +'<strong>Compiled &amp; Curated by Dr. Jayaprakash Ponraj</strong><br/>'
+  +'<span style="font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">Dr ஜெயபிரகாச் பொன்ராஜ்</span><br/>'
+  +'Digital Heritage Contributor &middot; Abu Dhabi, UAE</div>'
+  +'</div>'
+  +'<div style="min-height:26cm;padding:2.5cm 2.5cm;page-break-after:always;background:#fffef8;'
+  +'border-left:6px solid #c8a84b;position:relative">'
+  +'<div style="position:absolute;top:1.5cm;right:2cm;font-size:7pt;letter-spacing:.18em;color:#7a5f00;text-transform:uppercase">Dedication &middot; Page 1 of 3</div>'
+  +'<div style="text-align:center;margin-bottom:2rem">'
+  +'<div style="font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#7a5f00;margin-bottom:.6rem;font-family:Georgia,serif">&#127468;&#127463; English</div>'
+  +'<div style="font-size:22pt;color:#c8a84b;margin-bottom:1rem">★</div>'
+  +'<h2 style="font-size:20pt;color:#1a3a5c;font-family:Georgia,serif;letter-spacing:.05em">Dedication</h2>'
+  +'</div>'
+  +'<div style="max-width:14cm;margin:0 auto;font-size:11.5pt;line-height:2.2;color:#1a1000;text-align:center;font-family:Georgia,serif">'
+  +'<p><strong style="font-size:13pt">To H.H. Sheikh Zayed bin Sultan Al Nahyan</strong><br/>'
+  +'<em>Father of the Nation &middot; Founder of the UAE</em><br/>&#127462;&#127466;</p>'
+  +'<p style="margin-top:1.2rem">With profound respect and heartfelt gratitude,<br/>'
+  +'this work is dedicated to the noble legacy of a leader<br/>'
+  +'whose vision transformed a desert into a home for the world,<br/>'
+  +'whose compassion uplifted every community,<br/>'
+  +'and whose wisdom continues to guide generations.</p>'
+  +'<p>Sheikh Zayed believed in the dignity of every human being,<br/>'
+  +'in the power of knowledge,<br/>'
+  +'and in the beauty of unity across cultures and faiths.<br/>'
+  +'His life was a living testament to the values<br/>'
+  +'that Thiruvalluvar wrote about more than two millennia ago &mdash;<br/>'
+  +'<em>justice, compassion, humility, and righteous leadership.</em></p>'
+  +'<p>May this trilingual edition of the Thirukkural<br/>'
+  +'serve as a bridge between civilizations,<br/>'
+  +'a tribute to the multicultural spirit of the UAE,<br/>'
+  +'and a humble offering to the enduring light<br/>'
+  +'of Sheikh Zayed&rsquo;s legacy.</p>'
+  +'<p style="color:#7a5f00;font-style:italic">'
+  +'<em>His memory is a blessing.<br/>'
+  +'His vision is a guiding star.<br/>'
+  +'His humanity lives on in the heart of every UAEite.</em></p>'
+  +'</div>'
+  +'<div style="text-align:right;margin-top:2rem;padding-top:1rem;border-top:1px solid #d4b882;font-size:10pt;color:#7a5f00;font-style:italic;line-height:1.8">'
+  +'Dr. Jayaprakash Ponraj<br/>Digital Heritage Contributor<br/>'
+  +'Abu Dhabi, United Arab Emirates &middot; May 2026</div>'
+  +'</div>'
+  +'<div style="min-height:26cm;padding:2.5cm 2.5cm;page-break-after:always;background:#fffef8;border-left:6px solid #c8a84b;position:relative">'
+  +'<div style="position:absolute;top:1.5cm;right:2cm;font-size:7pt;letter-spacing:.18em;color:#7a5f00;text-transform:uppercase">Dedication &middot; Page 2 of 3</div>'
+  +'<div style="text-align:center;margin-bottom:2rem">'
+  +'<div style="font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#7a5f00;margin-bottom:.6rem">&#127470;&#127475; தமிழ்</div>'
+  +'<div style="font-size:22pt;color:#c8a84b;margin-bottom:1rem">★</div>'
+  +'<h2 style="font-size:18pt;color:#1a3a5c;font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">முன்னுரை &mdash; அர்ப்பணிப்பு</h2>'
+  +'</div>'
+  +'<div style="max-width:14cm;margin:0 auto;font-size:11pt;line-height:2.4;color:#1a1000;text-align:center;font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">'
+  +'<p><strong style="font-size:12pt">மாண்புமிகு ஷேக் ஸாயித் பின் ஸுல்தான் அல் நஹ்யான்</strong><br/>தேசத்தின் தந்தை &middot; ஐக்கிய அரபு எமிரேட்ட்சின் நிறுவனர்<br/>&#127462;&#127466;</p>'
+  +'<p style="margin-top:1.2rem">ஆழ்ந்த மரியாதையுடனும் உளமார்ந்த நன்றியுடனும்,<br/>இந்த நூல் அர்ப்பணிக்கப்படுகிறது<br/>பாலைவனத்தை உலகின் இல்லமாக மாற்றிய தலைவரின்<br/>உன்னத மரபிற்கு.</p>'
+  +'<p>ஷேக் ஸாயித் நம்பினார் &mdash;<br/>ஒவ்வொரு மனித உயிரின் கண்ணியத்தில்,<br/>அறிவின் வலிமையில்,<br/>கலாசாரங்களையும் நம்பிக்கைகளையும் தாண்டிய<br/>ஒற்றுமையின் அழகில்.</p>'
+  +'<p style="color:#7a5f00"><em>அவரின் நினைவு ஒரு ஆசீர்வாதம்.<br/>அவரின் தொலைநோக்கு ஒரு வழிகாட்டும் நட்சத்திரம்.<br/>அவரின் மனிதநேயம் ஒவ்வொரு எமிரேட்ட்சி இதயத்திலும் வாழ்கிறது.</em></p>'
+  +'</div>'
+  +'<div style="text-align:right;margin-top:2rem;padding-top:1rem;border-top:1px solid #d4b882;font-size:10pt;color:#7a5f00;line-height:1.9;font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">Dr ஜெயபிரகாச் பொன்ராஜ்<br/>டிஜிடல் பாரம்பரிய பங்களிப்பாளர்<br/>அபுதாபி, ஐக்கிய அரபு எமிரேட்ட்ச் &middot; மே 2026</div>'
+  +'</div>'
+  +'<div style="min-height:26cm;padding:2.5cm 2.5cm;page-break-after:always;background:#fffef8;border-right:6px solid #c8a84b;position:relative">'
+  +'<div style="position:absolute;top:1.5cm;left:2cm;font-size:7pt;letter-spacing:.18em;color:#7a5f00;text-transform:uppercase">Dedication &middot; Page 3 of 3</div>'
+  +'<div style="text-align:center;margin-bottom:2rem">'
+  +'<div style="font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#7a5f00;margin-bottom:.6rem">&#128332; العربية</div>'
+  +'<div style="font-size:22pt;color:#c8a84b;margin-bottom:1rem">★</div>'
+  +'<h2 style="font-size:18pt;color:#1a3a5c;font-family:\"Noto Naskh Arabic\",serif">الإهداء</h2>'
+  +'</div>'
+  +'<div style="direction:rtl;text-align:right;max-width:14cm;margin:0 auto;font-size:11.5pt;line-height:2.3;color:#1a1000;font-family:\"Noto Naskh Arabic\",serif">'
+  +'<p><strong style="font-size:13pt">إلى سمو الشيخ زايد بن سلطان آل نهيان</strong><br/>والد الأمة &middot; مؤسس الإمارات<br/>&#127462;&#127466;</p>'
+  +'<p style="margin-top:1.2rem">بعميق الاحترام وصادق الامتنان،<br/>تُهدى هذا العمل إلى الإرث النبيل<br/>لقائد حوّلت رؤيته الصحراء إلى موطن للعالم،<br/>ورفعت رحمته كل مجتمع،<br/>ولا تزال حكمته تهدي الأجيال.</p>'
+  +'<p>آمن الشيخ زايد بكرامة كل إنسان،<br/>وبقوة المعرفة،<br/>وبجمال الوحدة عبر الثقافات والأديان.</p>'
+  +'<p>فليكن هذا الإصدار جسراً بين الحضارات،<br/>وتحيةً لروح الإمارات متعددة الثقافات،<br/>وإهداءً متواضعاً للنور الخالد.</p>'
+  +'<p style="color:#7a5f00"><em>ذكراه بركة.<br/>رؤيته نجم يهدي المسير.<br/>إنسانيته تحيا في قلب كل إماراتي.</em></p>'
+  +'</div>'
+  +'<div style="text-align:left;margin-top:2rem;padding-top:1rem;border-top:1px solid #d4b882;font-size:10pt;color:#7a5f00;line-height:1.9;font-family:\"Noto Naskh Arabic\",serif;direction:rtl">الدكتور جاياپراكاش بونراج<br/>مساهم في التراث الرقمي<br/>أبوظبي، الإمارات &middot; مايو 2026</div>'
+  +'</div>'
+  +'<div style="min-height:26cm;padding:2.5cm 2.5cm;page-break-after:always;background:#fafaf5;border-left:4px solid #c8a84b">'
+  +'<div style="text-align:center;margin-bottom:2rem">'
+  +'<div style="font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#7a5f00;margin-bottom:.6rem;font-family:Georgia,serif">&#127468;&#127463; Foreword &middot; Page 1 of 3</div>'
+  +'<h2 style="font-size:20pt;color:#1a3a5c;font-family:Georgia,serif">Foreword</h2>'
+  +'<div style="height:1px;background:linear-gradient(90deg,transparent,#c8a84b,transparent);width:40%;margin:.6rem auto"></div>'
+  +'</div>'
+  +'<div style="max-width:14cm;margin:0 auto;font-size:11pt;line-height:2;color:#1a1000;font-family:Georgia,serif">'
+  +'<p>The United Arab Emirates rises today as a land where dreams ascend like dawn over golden sands, where unity shapes destiny, and where the wisdom of leaders illuminates every horizon.</p>'
+  +'<p>At the heart of this nation stands <strong>Sheikh Zayed bin Sultan Al Nahyan</strong>, whose compassion flowed like an endless spring and whose vision transformed a desert into a garden of hope.</p>'
+  +'<p><strong>Sheikh Mohammed bin Rashid Al Maktoum</strong> &mdash; whose imagination turns possibility into achievement.</p>'
+  +'<p><strong>Sheikh Mohamed bin Zayed Al Nahyan</strong> &mdash; whose courage and clarity guide the nation with noble strength.</p>'
+  +'<p>Centuries before this modern miracle, the Tamil sage <strong>Thiruvalluvar</strong> offered humanity the timeless scripture of virtue &mdash; the <em>Thirukkural</em>, 1,330 couplets distilled into the essence of righteous living.</p>'
+  +'<div style="border-left:3px solid #c8a84b;padding:.5rem 1rem;margin:.8rem 0;background:#fffaee">'
+  +'<div style="font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif;font-size:12pt;font-weight:600;color:#1a1000">கருணையே அறத்தின் முதல்வன்.</div>'
+  +'<div style="font-size:9.5pt;color:#666;font-style:italic;margin-top:.2rem">Thirukkural &mdash; Compassion is the root of all noble qualities.</div>'
+  +'</div>'
+  +'<div style="border-left:3px solid #c8a84b;padding:.5rem 1rem;margin:.8rem 0;background:#fffaee">'
+  +'<div style="font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif;font-size:12pt;font-weight:600;color:#1a1000">அரசன் நீதியால் உலகம் நிலைபேறும்.</div>'
+  +'<div style="font-size:9.5pt;color:#666;font-style:italic;margin-top:.2rem">Thirukkural &mdash; The world stands firm under a just ruler.</div>'
+  +'</div>'
+  +'<div style="border-left:3px solid #c8a84b;padding:.5rem 1rem;margin:.8rem 0;background:#fffaee">'
+  +'<div style="font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif;font-size:12pt;font-weight:600;color:#1a1000">ஒன்றுபட்டால் உயர்வு மலரும்.</div>'
+  +'<div style="font-size:9.5pt;color:#666;font-style:italic;margin-top:.2rem">Thirukkural &mdash; Where hearts unite, prosperity blossoms.</div>'
+  +'</div>'
+  +'<p>As we honor the UAE&rsquo;s journey, we honor the eternal wisdom reminding us that true progress is built on virtue, justice, compassion, and the upliftment of all humanity.</p>'
+  +'</div>'
+  +'<div style="text-align:right;margin-top:1.5rem;padding-top:.8rem;border-top:1px solid #d4b882;font-size:10pt;color:#7a5f00;font-style:italic;line-height:1.8">'
+  +'Dr. Jayaprakash Ponraj<br/>Digital Heritage Contributor<br/>Abu Dhabi, United Arab Emirates &middot; May 2026</div>'
+  +'</div>'
+  +'<div style="min-height:26cm;padding:2.5cm 2.5cm;page-break-after:always;background:#fafaf5;border-left:4px solid #c8a84b">'
+  +'<div style="text-align:center;margin-bottom:2rem">'
+  +'<div style="font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#7a5f00;margin-bottom:.6rem">&#127470;&#127475; தமிழ் முன்னுரை &middot; Page 2 of 3</div>'
+  +'<h2 style="font-size:18pt;color:#1a3a5c;font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">முன்னுரை</h2>'
+  +'<div style="height:1px;background:linear-gradient(90deg,transparent,#c8a84b,transparent);width:40%;margin:.6rem auto"></div>'
+  +'</div>'
+  +'<div style="max-width:14cm;margin:0 auto;font-size:11pt;line-height:2.5;color:#1a1000;font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">'
+  +'<p>மணற்குன்றின் மேல் உதிக்கும் விடியல்போல் கனவுகள் நனவாகும் தேசம் — ஒற்றுமை வலிமையாகும் நிலம் — அதுவே ஐக்கிய அரபு எமிரேட்ட்ச்.</p>'
+  +'<p>இந்த நாட்டின் இதயத்தில் நிற்பவர் <strong>ஷேக் சாயித் பின் சுல்தான் அல் நஹ்யான்</strong>. அவரின் கருணை முடிவில்லா ஊற்றாக ஓடியது.</p>'
+  +'<p>நூற்றாண்டுகள்கு முன், தமிழின் மாமுனிவர் <strong>திருவள்ளுவர்</strong> திருக்குறள் 1330 குறள்களால் அறத்தின் சாரத்தை உலகிற்கு வழங்கினார்.</p>'
+  +'<div style="border-left:3px solid #c8a84b;padding:.5rem 1rem;margin:.8rem 0;background:#fffaee">'
+  +'<div style="font-size:12pt;font-weight:600;color:#1a1000">திருக்குறள் — நல்லாட்சி</div>'
+  +'<div style="font-size:9.5pt;color:#555;margin-top:.2rem">“அரசன் நீதியால் உலகம் நிலைபேறும்.”</div>'
+  +'</div>'
+  +'<div style="border-left:3px solid #c8a84b;padding:.5rem 1rem;margin:.8rem 0;background:#fffaee">'
+  +'<div style="font-size:12pt;font-weight:600;color:#1a1000">திருக்குறள் — கருணை</div>'
+  +'<div style="font-size:9.5pt;color:#555;margin-top:.2rem">“கருணையே அறத்தின் முதல்வன்.”</div>'
+  +'</div>'
+  +'<p>எமிரேட்ட்ச் நாட்டின் பயணத்தை கொண்டாடும் போது, மனிதகுலத்தை ஒளிக்குக் கொண்டு செல்லும் அந்த காலத்தால் அழியாத ஻னானத்தையும் நாம் கௌரவிக்கிறோம்.</p>'
+  +'</div>'
+  +'<div style="text-align:right;margin-top:1.5rem;padding-top:.8rem;border-top:1px solid #d4b882;font-size:10pt;color:#7a5f00;line-height:1.9;font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">Dr ஜெயபிரகாச் பொன்ராஜ்<br/>டிஜிடல் பாரம்பரிய பங்களிப்பாளர்<br/>அபுதாபி &middot; மே 2026</div>'
+  +'</div>'
+  +'<div style="min-height:26cm;padding:2.5cm 2.5cm;page-break-after:always;background:#fafaf5;border-right:4px solid #c8a84b">'
+  +'<div style="text-align:center;margin-bottom:2rem">'
+  +'<div style="font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#7a5f00;margin-bottom:.6rem">&#128332; المقدمة &middot; Page 3 of 3</div>'
+  +'<h2 style="font-size:18pt;color:#1a3a5c;font-family:\"Noto Naskh Arabic\",serif">المقدمة</h2>'
+  +'<div style="height:1px;background:linear-gradient(90deg,transparent,#c8a84b,transparent);width:40%;margin:.6rem auto"></div>'
+  +'</div>'
+  +'<div style="direction:rtl;text-align:right;max-width:14cm;margin:0 auto;font-size:11.5pt;line-height:2.3;color:#1a1000;font-family:\"Noto Naskh Arabic\",serif">'
+  +'<p>تنهض دولة الإمارات كقصيدة تُكتب على صفحة الصحراء، حيث تتحول الأحلام إلى واقع، وتصبح الوحدة قوة.</p>'
+  +'<p>وفي قلب هذا الوطن يقف <strong>الشيخ زايد بن سلطان آل نهيان</strong>، قائد فاضت رحمته كنبع لا ينضب.</p>'
+  +'<p>قبل قرون، قدّم الحكيم التاميلي <strong>ثيروفالّلوفار</strong> كتابه الخالد التيروكّورال، 1330 بيتًا من جوهر الفضيلة.</p>'
+  +'<div style="border-right:3px solid #c8a84b;padding:.5rem 1rem;margin:.8rem 0;background:#fffaee">'
+  +'<div style="font-size:12pt;font-weight:600;color:#1a1000">من التيروكّورال — عن الرحمة: الرحمة أصل كل فضيلة</div>'
+  +'</div>'
+  +'<div style="border-right:3px solid #c8a84b;padding:.5rem 1rem;margin:.8rem 0;background:#fffaee">'
+  +'<div style="font-size:12pt;font-weight:600;color:#1a1000">من التيروكّورال — عن العدل: تستقيم الأرض تحت حكم الملك العادل</div>'
+  +'</div>'
+  +'<p>وفي احتفائنا بمسيرة الإمارات، نحتفي بالحكمة الخالدة التي تذكّرنا بأن التقدم الحقيقي يقوم على الفضيلة والعدل والرحمة.</p>'
+  +'</div>'
+  +'<div style="text-align:left;margin-top:1.5rem;padding-top:.8rem;border-top:1px solid #d4b882;font-size:10pt;color:#7a5f00;line-height:1.9;font-family:\"Noto Naskh Arabic\",serif;direction:rtl">الدكتور جاياپراكاش بونراج<br/>مساهم في التراث الرقمي<br/>أبوظبي &middot; مايو 2026</div>'
+  +'</div>'
+  +pages
+  +'<div style="text-align:center;padding:2rem;border-top:2px solid #c8a84b;margin-top:1.5cm;font-size:9pt;color:#777;line-height:2;font-family:Georgia,serif">'
+  +'<strong style="font-size:11pt;color:#1a1000">திருக்குறள் &middot; Thirukkural &middot; ثيروكورال</strong><br/>'
+  +'All 1330 Kurals &mdash; Tamil &middot; English &middot; Arabic &mdash; v4-arabic &middot; 26 May 2026<br/>'
+  +'Dedicated to H.H. Sheikh Zayed bin Sultan Al Nahyan &mdash; Father of the UAE &#127462;&#127466;<br/>'
+  +'Compiled &amp; Curated by <strong>Dr. Jayaprakash Ponraj</strong> &middot; '
+  +'<span style="font-family:\"Noto Serif Tamil\",\"Noto Sans Tamil\",serif">Dr ஜெயபிரகாச் பொன்ராஜ்</span><br/>'
+  +'&#127378; 90% of proceeds go to charity</div>'
+  +'<scr'+'ipt>window.onload=function(){window.print();};<'+'/scr'+'ipt>'
+  +'</body></html>');
+  w.document.close();
+  ov.style.display='none';
+});
+
+
+// ═══════════════════════════════════════════════
+// EVENT LISTENERS
+// ═══════════════════════════════════════════════
+function _toggle(tid, bid) {
+  var t=document.getElementById(tid), b=document.getElementById(bid);
+  if(t&&b) t.onclick=function(){t.classList.toggle('open');b.classList.toggle('open');};
+}
+function _langSwitch(bc, pc) {
+  var btns=document.querySelectorAll('.'+bc), panes=document.querySelectorAll('.'+pc);
+  btns.forEach(function(btn){
+    btn.onclick=function(){
+      btns.forEach(function(b){b.classList.remove('active');});
+      panes.forEach(function(p){p.classList.remove('active');});
+      btn.classList.add('active');
+      var pane=document.getElementById(btn.getAttribute('data-pane'));
+      if(pane) pane.classList.add('active');
+    };
+  });
+}
+_toggle('fwToggle','fwBody');
+_toggle('dedToggle','dedBody');
+_toggle('vhToggle','vhBody');
+_toggle('galleryToggle','galleryBody');
+_langSwitch('fw-lang-btn','fw-pane');
+_langSwitch('ded-lang-btn','ded-pane');
+
+window.onscroll=function(){
+  var d=document.documentElement;
+  var pct=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100;
+  var pb=document.getElementById('progBar');
+  if(pb) pb.style.width=Math.min(100,pct)+'%';
+  var b=document.getElementById('btt');
+  if(b) b.classList.toggle('visible',d.scrollTop>400);
+};
+var _b=document.getElementById('btt');
+if(_b) _b.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
+var _g=document.getElementById('kgrid');
+if(_g) _g.onclick=function(e){
+  var cb=e.target.closest('.cb');
+  if(cb&&cb.getAttribute('data-ch')){document.getElementById('chSel').value=cb.getAttribute('data-ch');applyFilters();window.scrollTo({top:0,behavior:'smooth'});}
+  var kn=e.target.closest('.kn');
+  if(kn&&kn.getAttribute('data-n')) openModal(parseInt(kn.getAttribute('data-n'))-1);
+};
+document.onkeydown=function(e){
+  if(!document.getElementById('mov').classList.contains('open')) return;
+  if(e.key==='Escape') closeModal();
+  if(e.key==='ArrowLeft'&&mIdx>0) openModal(mIdx-1);
+  if(e.key==='ArrowRight'&&mIdx<KURALS.length-1) openModal(mIdx+1);
+};
+
+render();
+
+</script>
+
+</body>
+</html>
